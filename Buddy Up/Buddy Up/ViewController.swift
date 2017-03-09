@@ -8,26 +8,37 @@
 
 import UIKit
 import FBSDKLoginKit
+import AWSMobileHubHelper
 
 class ViewController: UIViewController {
-    let Loginbutton : FBSDKLoginButton = {
-        let button = FBSDKLoginButton()
-        button.readPermissions = ["email"]
-        return button
-    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let loginButton : FBSDKLoginButton = FBSDKLoginButton()
         
-        view.addSubview(Loginbutton)
-        Loginbutton.center = view.center
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
+        override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    func handleLoginWithSignInProvider(signInProvider: AWSSignInProvider) {
+        AWSIdentityManager.default().login(signInProvider: signInProvider, completionHandler:
+            {(result: Any?, error: Error?) -> Void in
+                if error == nil {
+                    /* Handle successful login. */
+                }
+                print("Login with signin provider result = \(result), error = \(error)")
+        })
+    }
+    func handleFacebookLogin() {
+        // Facebook login permissions can be optionally set, but must be set
+        // before user authenticates.
+        AWSFacebookSignInProvider.sharedInstance().setPermissions(["public_profile"]);
+        
+        handleLoginWithSignInProvider(signInProvider: AWSFacebookSignInProvider.sharedInstance())
+    }
 }
 
