@@ -52,6 +52,10 @@ class SignInViewController: UIViewController {
             facebookButton.isHidden = true
         }
     }
+    @IBAction func switchToRegister(_ sender: Any) {
+        createAccountButton.addTarget(self, action: #selector(self.handleCustomSignIn), for: .touchUpInside)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

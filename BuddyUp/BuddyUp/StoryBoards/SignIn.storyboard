@@ -56,6 +56,10 @@
                                 <rect key="frame" x="68" y="489" width="238" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="switchToRegister:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QYw-ea-W0t"/>
+                                    <action selector="switchToRegisterPage:" destination="BYZ-38-t0r" eventType="touchDown" id="Am4-pm-hzR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBM-40-y2V">
                                 <rect key="frame" x="130" y="533" width="115" height="30"/>
