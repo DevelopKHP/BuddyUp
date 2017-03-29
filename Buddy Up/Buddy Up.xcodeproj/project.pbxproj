@@ -1,0 +1,650 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B14F51B11E82452600CDE1D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F51B01E82452600CDE1D9 /* Main.storyboard */; };
+		B14F51B31E82452D00CDE1D9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14F51B21E82452D00CDE1D9 /* MainViewController.swift */; };
+		B14F51B51E8246D700CDE1D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F51B41E8246D700CDE1D9 /* LaunchScreen.storyboard */; };
+		B18436B31E81C52C00D1F430 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B18436B21E81C52C00D1F430 /* libsqlite3.tbd */; };
+		B18436B51E81C53F00D1F430 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B18436B41E81C53F00D1F430 /* libz.tbd */; };
+		B18859F81E81BF8200ADEC33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18859F71E81BF8200ADEC33 /* Assets.xcassets */; };
+		B1885A091E81C08500ADEC33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1885A071E81C08500ADEC33 /* AppDelegate.swift */; };
+		B1AB8FFA1E822F670009AFF2 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1AB8FF91E822F670009AFF2 /* SignIn.storyboard */; };
+		B1AB8FFC1E822F720009AFF2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AB8FFB1E822F720009AFF2 /* SignInViewController.swift */; };
+		B1D35E221E81C9AA0087EBDB /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35E211E81C9AA0087EBDB /* AWSMobileHubHelper.framework */; };
+		B1D35E261E81C9C00087EBDB /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35E231E81C9C00087EBDB /* AWSCore.framework */; };
+		B1D35E271E81C9C00087EBDB /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35E241E81C9C00087EBDB /* AWSDynamoDB.framework */; };
+		B1D35E281E81C9C00087EBDB /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35E251E81C9C00087EBDB /* AWSS3.framework */; };
+		B1D35E2A1E81C9C50087EBDB /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35E291E81C9C50087EBDB /* AWSCognito.framework */; };
+		B1D35E2D1E81C9D10087EBDB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35E2B1E81C9D10087EBDB /* FBSDKCoreKit.framework */; };
+		B1D35E2E1E81C9D10087EBDB /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35E2C1E81C9D10087EBDB /* FBSDKLoginKit.framework */; };
+		B1D35E301E81CA650087EBDB /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35E2F1E81CA650087EBDB /* AWSCognitoIdentityProvider.framework */; };
+		B1D35E311E81CA810087EBDB /* AWSCognitoIdentityProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35E2F1E81CA650087EBDB /* AWSCognitoIdentityProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1D35E321E81CA810087EBDB /* AWSCognito.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35E291E81C9C50087EBDB /* AWSCognito.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1D35E331E81CA810087EBDB /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35E231E81C9C00087EBDB /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1D35E341E81CA810087EBDB /* AWSDynamoDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35E241E81C9C00087EBDB /* AWSDynamoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1D35E351E81CA810087EBDB /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35E251E81C9C00087EBDB /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1D35E4A1E820F150087EBDB /* NoSQLModelHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D35E431E820F150087EBDB /* NoSQLModelHelpers.swift */; };
+		B1D35E4B1E820F150087EBDB /* NoSQLQueryResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D35E441E820F150087EBDB /* NoSQLQueryResultViewController.swift */; };
+		B1D35E4C1E820F150087EBDB /* NoSQLSampleDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D35E451E820F150087EBDB /* NoSQLSampleDataGenerator.swift */; };
+		B1D35E4D1E820F150087EBDB /* NoSQLTableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D35E461E820F150087EBDB /* NoSQLTableFactory.swift */; };
+		B1D35E4E1E820F150087EBDB /* NoSQLTableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D35E471E820F150087EBDB /* NoSQLTableListViewController.swift */; };
+		B1D35E4F1E820F150087EBDB /* NoSQLTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D35E481E820F150087EBDB /* NoSQLTableViewController.swift */; };
+		B1D35E501E820F150087EBDB /* UserInfoTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D35E491E820F150087EBDB /* UserInfoTable.swift */; };
+		B1E4ABDF1E8210260095BB18 /* NoSQLDatabase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E4ABDE1E8210260095BB18 /* NoSQLDatabase.storyboard */; };
+		B1E4ABE21E82104D0095BB18 /* UserDataStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E4ABE11E82104D0095BB18 /* UserDataStorageViewController.swift */; };
+		B1E4ABE71E82106E0095BB18 /* UserDataStorage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E4ABE61E82106E0095BB18 /* UserDataStorage.storyboard */; };
+		B1E4ABE91E82108A0095BB18 /* UserFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E4ABE81E82108A0095BB18 /* UserFilesViewController.swift */; };
+		B1E4ABEB1E82108F0095BB18 /* UserFiles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E4ABEA1E82108F0095BB18 /* UserFiles.storyboard */; };
+		B1E4ABEE1E8210AF0095BB18 /* UserIdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E4ABED1E8210AF0095BB18 /* UserIdentityViewController.swift */; };
+		B1E4ABF01E8210B80095BB18 /* UserIdentity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E4ABEF1E8210B80095BB18 /* UserIdentity.storyboard */; };
+		B1E4ABF41E8210DF0095BB18 /* ColorThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E4ABF21E8210DF0095BB18 /* ColorThemeSettings.swift */; };
+		B1E4ABF51E8210DF0095BB18 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E4ABF31E8210DF0095BB18 /* UserSettingsViewController.swift */; };
+		B1E4ABF71E8210EF0095BB18 /* UserSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E4ABF61E8210EF0095BB18 /* UserSettings.storyboard */; };
+		B1E4ABF91E82111F0095BB18 /* AWSConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E4ABF81E82111F0095BB18 /* AWSConfiguration.swift */; };
+		B1E4ABFB1E8211350095BB18 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E4ABFA1E8211350095BB18 /* UserInfo.swift */; };
+		B1E4ABFD1E821B3B0095BB18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E4ABFC1E821B3B0095BB18 /* UIKit.framework */; };
+		B1F2DFCF1E81C34C00F2CE6A /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2DFCE1E81C34C00F2CE6A /* AWSMobileClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B1885A441E81C1CB00ADEC33 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B1D35E311E81CA810087EBDB /* AWSCognitoIdentityProvider.framework in Embed Frameworks */,
+				B1D35E321E81CA810087EBDB /* AWSCognito.framework in Embed Frameworks */,
+				B1D35E331E81CA810087EBDB /* AWSCore.framework in Embed Frameworks */,
+				B1D35E341E81CA810087EBDB /* AWSDynamoDB.framework in Embed Frameworks */,
+				B1D35E351E81CA810087EBDB /* AWSS3.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B14F51B01E82452600CDE1D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B14F51B21E82452D00CDE1D9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B14F51B41E8246D700CDE1D9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B18436B21E81C52C00D1F430 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		B18436B41E81C53F00D1F430 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		B18859EA1E81BF8200ADEC33 /* Buddy Up.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Buddy Up.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B18859F51E81BF8200ADEC33 /* Buddy_Up.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Buddy_Up.xcdatamodel; sourceTree = "<group>"; };
+		B18859F71E81BF8200ADEC33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B18859FC1E81BF8200ADEC33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1885A071E81C08500ADEC33 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B1AB8FF91E822F670009AFF2 /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		B1AB8FFB1E822F720009AFF2 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		B1D35E211E81C9AA0087EBDB /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSMobileHubHelper.framework; sourceTree = "<group>"; };
+		B1D35E231E81C9C00087EBDB /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
+		B1D35E241E81C9C00087EBDB /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSDynamoDB.framework; sourceTree = "<group>"; };
+		B1D35E251E81C9C00087EBDB /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
+		B1D35E291E81C9C50087EBDB /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognito.framework; sourceTree = "<group>"; };
+		B1D35E2B1E81C9D10087EBDB /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		B1D35E2C1E81C9D10087EBDB /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B1D35E2F1E81CA650087EBDB /* AWSCognitoIdentityProvider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognitoIdentityProvider.framework; sourceTree = "<group>"; };
+		B1D35E431E820F150087EBDB /* NoSQLModelHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSQLModelHelpers.swift; sourceTree = "<group>"; };
+		B1D35E441E820F150087EBDB /* NoSQLQueryResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSQLQueryResultViewController.swift; sourceTree = "<group>"; };
+		B1D35E451E820F150087EBDB /* NoSQLSampleDataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSQLSampleDataGenerator.swift; sourceTree = "<group>"; };
+		B1D35E461E820F150087EBDB /* NoSQLTableFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSQLTableFactory.swift; sourceTree = "<group>"; };
+		B1D35E471E820F150087EBDB /* NoSQLTableListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSQLTableListViewController.swift; sourceTree = "<group>"; };
+		B1D35E481E820F150087EBDB /* NoSQLTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSQLTableViewController.swift; sourceTree = "<group>"; };
+		B1D35E491E820F150087EBDB /* UserInfoTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTable.swift; sourceTree = "<group>"; };
+		B1E4ABDE1E8210260095BB18 /* NoSQLDatabase.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NoSQLDatabase.storyboard; sourceTree = "<group>"; };
+		B1E4ABE11E82104D0095BB18 /* UserDataStorageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataStorageViewController.swift; sourceTree = "<group>"; };
+		B1E4ABE61E82106E0095BB18 /* UserDataStorage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserDataStorage.storyboard; sourceTree = "<group>"; };
+		B1E4ABE81E82108A0095BB18 /* UserFilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFilesViewController.swift; sourceTree = "<group>"; };
+		B1E4ABEA1E82108F0095BB18 /* UserFiles.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserFiles.storyboard; sourceTree = "<group>"; };
+		B1E4ABED1E8210AF0095BB18 /* UserIdentityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIdentityViewController.swift; sourceTree = "<group>"; };
+		B1E4ABEF1E8210B80095BB18 /* UserIdentity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserIdentity.storyboard; sourceTree = "<group>"; };
+		B1E4ABF21E8210DF0095BB18 /* ColorThemeSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorThemeSettings.swift; sourceTree = "<group>"; };
+		B1E4ABF31E8210DF0095BB18 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
+		B1E4ABF61E8210EF0095BB18 /* UserSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserSettings.storyboard; sourceTree = "<group>"; };
+		B1E4ABF81E82111F0095BB18 /* AWSConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSConfiguration.swift; sourceTree = "<group>"; };
+		B1E4ABFA1E8211350095BB18 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		B1E4ABFC1E821B3B0095BB18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B1F2DFCE1E81C34C00F2CE6A /* AWSMobileClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSMobileClient.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B18859E71E81BF8200ADEC33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1E4ABFD1E821B3B0095BB18 /* UIKit.framework in Frameworks */,
+				B18436B51E81C53F00D1F430 /* libz.tbd in Frameworks */,
+				B1D35E261E81C9C00087EBDB /* AWSCore.framework in Frameworks */,
+				B1D35E2E1E81C9D10087EBDB /* FBSDKLoginKit.framework in Frameworks */,
+				B1D35E301E81CA650087EBDB /* AWSCognitoIdentityProvider.framework in Frameworks */,
+				B1D35E281E81C9C00087EBDB /* AWSS3.framework in Frameworks */,
+				B18436B31E81C52C00D1F430 /* libsqlite3.tbd in Frameworks */,
+				B1D35E221E81C9AA0087EBDB /* AWSMobileHubHelper.framework in Frameworks */,
+				B1D35E2D1E81C9D10087EBDB /* FBSDKCoreKit.framework in Frameworks */,
+				B1D35E271E81C9C00087EBDB /* AWSDynamoDB.framework in Frameworks */,
+				B1D35E2A1E81C9C50087EBDB /* AWSCognito.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B18859E11E81BF8200ADEC33 = {
+			isa = PBXGroup;
+			children = (
+				B1885A1F1E81C17A00ADEC33 /* Frameworks */,
+				B1885A041E81C00B00ADEC33 /* Story Boards */,
+				B1885A051E81C00B00ADEC33 /* Swift Files */,
+				B18859EC1E81BF8200ADEC33 /* Buddy Up */,
+				B18859EB1E81BF8200ADEC33 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B18859EB1E81BF8200ADEC33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B18859EA1E81BF8200ADEC33 /* Buddy Up.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B18859EC1E81BF8200ADEC33 /* Buddy Up */ = {
+			isa = PBXGroup;
+			children = (
+				B18859F71E81BF8200ADEC33 /* Assets.xcassets */,
+				B18859FC1E81BF8200ADEC33 /* Info.plist */,
+				B18859F41E81BF8200ADEC33 /* Buddy_Up.xcdatamodeld */,
+			);
+			path = "Buddy Up";
+			sourceTree = "<group>";
+		};
+		B1885A041E81C00B00ADEC33 /* Story Boards */ = {
+			isa = PBXGroup;
+			children = (
+				B1AB8FF91E822F670009AFF2 /* SignIn.storyboard */,
+				B1E4ABF61E8210EF0095BB18 /* UserSettings.storyboard */,
+				B1E4ABEF1E8210B80095BB18 /* UserIdentity.storyboard */,
+				B1E4ABEA1E82108F0095BB18 /* UserFiles.storyboard */,
+				B1E4ABE61E82106E0095BB18 /* UserDataStorage.storyboard */,
+				B1E4ABDE1E8210260095BB18 /* NoSQLDatabase.storyboard */,
+				B14F51B41E8246D700CDE1D9 /* LaunchScreen.storyboard */,
+				B14F51B01E82452600CDE1D9 /* Main.storyboard */,
+			);
+			name = "Story Boards";
+			path = "Buddy Up/Story Boards";
+			sourceTree = "<group>";
+		};
+		B1885A051E81C00B00ADEC33 /* Swift Files */ = {
+			isa = PBXGroup;
+			children = (
+				B1E4ABF11E8210CE0095BB18 /* UserSettings */,
+				B1E4ABEC1E8210A70095BB18 /* UserIdentity */,
+				B1E4ABE31E8210600095BB18 /* UserFiles */,
+				B1E4ABE01E8210420095BB18 /* UserDataStorage */,
+				B1D35E421E820F050087EBDB /* NoSQL */,
+				B1885A161E81C0C600ADEC33 /* SignIn */,
+				B1885A071E81C08500ADEC33 /* AppDelegate.swift */,
+				B1F2DFCE1E81C34C00F2CE6A /* AWSMobileClient.swift */,
+				B1E4ABF81E82111F0095BB18 /* AWSConfiguration.swift */,
+				B14F51B21E82452D00CDE1D9 /* MainViewController.swift */,
+			);
+			name = "Swift Files";
+			path = "Buddy Up/Swift Files";
+			sourceTree = "<group>";
+		};
+		B1885A161E81C0C600ADEC33 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				B1AB8FFB1E822F720009AFF2 /* SignInViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		B1885A1F1E81C17A00ADEC33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1E4ABFC1E821B3B0095BB18 /* UIKit.framework */,
+				B1D35E2F1E81CA650087EBDB /* AWSCognitoIdentityProvider.framework */,
+				B1D35E2B1E81C9D10087EBDB /* FBSDKCoreKit.framework */,
+				B1D35E2C1E81C9D10087EBDB /* FBSDKLoginKit.framework */,
+				B1D35E291E81C9C50087EBDB /* AWSCognito.framework */,
+				B1D35E231E81C9C00087EBDB /* AWSCore.framework */,
+				B1D35E241E81C9C00087EBDB /* AWSDynamoDB.framework */,
+				B1D35E251E81C9C00087EBDB /* AWSS3.framework */,
+				B1D35E211E81C9AA0087EBDB /* AWSMobileHubHelper.framework */,
+				B18436B41E81C53F00D1F430 /* libz.tbd */,
+				B18436B21E81C52C00D1F430 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			path = "Buddy Up/Frameworks";
+			sourceTree = "<group>";
+		};
+		B1D35E421E820F050087EBDB /* NoSQL */ = {
+			isa = PBXGroup;
+			children = (
+				B1D35E431E820F150087EBDB /* NoSQLModelHelpers.swift */,
+				B1D35E441E820F150087EBDB /* NoSQLQueryResultViewController.swift */,
+				B1D35E451E820F150087EBDB /* NoSQLSampleDataGenerator.swift */,
+				B1D35E461E820F150087EBDB /* NoSQLTableFactory.swift */,
+				B1D35E471E820F150087EBDB /* NoSQLTableListViewController.swift */,
+				B1D35E481E820F150087EBDB /* NoSQLTableViewController.swift */,
+				B1D35E491E820F150087EBDB /* UserInfoTable.swift */,
+			);
+			path = NoSQL;
+			sourceTree = "<group>";
+		};
+		B1E4ABE01E8210420095BB18 /* UserDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				B1E4ABE11E82104D0095BB18 /* UserDataStorageViewController.swift */,
+			);
+			path = UserDataStorage;
+			sourceTree = "<group>";
+		};
+		B1E4ABE31E8210600095BB18 /* UserFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B1E4ABFA1E8211350095BB18 /* UserInfo.swift */,
+				B1E4ABE81E82108A0095BB18 /* UserFilesViewController.swift */,
+			);
+			path = UserFiles;
+			sourceTree = "<group>";
+		};
+		B1E4ABEC1E8210A70095BB18 /* UserIdentity */ = {
+			isa = PBXGroup;
+			children = (
+				B1E4ABED1E8210AF0095BB18 /* UserIdentityViewController.swift */,
+			);
+			path = UserIdentity;
+			sourceTree = "<group>";
+		};
+		B1E4ABF11E8210CE0095BB18 /* UserSettings */ = {
+			isa = PBXGroup;
+			children = (
+				B1E4ABF21E8210DF0095BB18 /* ColorThemeSettings.swift */,
+				B1E4ABF31E8210DF0095BB18 /* UserSettingsViewController.swift */,
+			);
+			path = UserSettings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B18859E91E81BF8200ADEC33 /* Buddy Up */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B18859FF1E81BF8200ADEC33 /* Build configuration list for PBXNativeTarget "Buddy Up" */;
+			buildPhases = (
+				B18859E61E81BF8200ADEC33 /* Sources */,
+				B18859E71E81BF8200ADEC33 /* Frameworks */,
+				B18859E81E81BF8200ADEC33 /* Resources */,
+				B1885A021E81BF9300ADEC33 /* ShellScript */,
+				B1885A441E81C1CB00ADEC33 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Buddy Up";
+			productName = "Buddy Up";
+			productReference = B18859EA1E81BF8200ADEC33 /* Buddy Up.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B18859E21E81BF8200ADEC33 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Kyle Phan";
+				TargetAttributes = {
+					B18859E91E81BF8200ADEC33 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 66R584JSQD;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B18859E51E81BF8200ADEC33 /* Build configuration list for PBXProject "Buddy Up" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B18859E11E81BF8200ADEC33;
+			productRefGroup = B18859EB1E81BF8200ADEC33 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B18859E91E81BF8200ADEC33 /* Buddy Up */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B18859E81E81BF8200ADEC33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1AB8FFA1E822F670009AFF2 /* SignIn.storyboard in Resources */,
+				B1E4ABDF1E8210260095BB18 /* NoSQLDatabase.storyboard in Resources */,
+				B1E4ABF01E8210B80095BB18 /* UserIdentity.storyboard in Resources */,
+				B14F51B51E8246D700CDE1D9 /* LaunchScreen.storyboard in Resources */,
+				B14F51B11E82452600CDE1D9 /* Main.storyboard in Resources */,
+				B1E4ABEB1E82108F0095BB18 /* UserFiles.storyboard in Resources */,
+				B1E4ABE71E82106E0095BB18 /* UserDataStorage.storyboard in Resources */,
+				B1E4ABF71E8210EF0095BB18 /* UserSettings.storyboard in Resources */,
+				B18859F81E81BF8200ADEC33 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B1885A021E81BF9300ADEC33 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B18859E61E81BF8200ADEC33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1D35E4D1E820F150087EBDB /* NoSQLTableFactory.swift in Sources */,
+				B1E4ABFB1E8211350095BB18 /* UserInfo.swift in Sources */,
+				B1D35E4A1E820F150087EBDB /* NoSQLModelHelpers.swift in Sources */,
+				B1D35E4B1E820F150087EBDB /* NoSQLQueryResultViewController.swift in Sources */,
+				B1E4ABF51E8210DF0095BB18 /* UserSettingsViewController.swift in Sources */,
+				B1D35E4E1E820F150087EBDB /* NoSQLTableListViewController.swift in Sources */,
+				B1E4ABF91E82111F0095BB18 /* AWSConfiguration.swift in Sources */,
+				B1AB8FFC1E822F720009AFF2 /* SignInViewController.swift in Sources */,
+				B1F2DFCF1E81C34C00F2CE6A /* AWSMobileClient.swift in Sources */,
+				B1E4ABF41E8210DF0095BB18 /* ColorThemeSettings.swift in Sources */,
+				B1D35E4C1E820F150087EBDB /* NoSQLSampleDataGenerator.swift in Sources */,
+				B1885A091E81C08500ADEC33 /* AppDelegate.swift in Sources */,
+				B1E4ABE21E82104D0095BB18 /* UserDataStorageViewController.swift in Sources */,
+				B1D35E4F1E820F150087EBDB /* NoSQLTableViewController.swift in Sources */,
+				B1E4ABE91E82108A0095BB18 /* UserFilesViewController.swift in Sources */,
+				B14F51B31E82452D00CDE1D9 /* MainViewController.swift in Sources */,
+				B1D35E501E820F150087EBDB /* UserInfoTable.swift in Sources */,
+				B1E4ABEE1E8210AF0095BB18 /* UserIdentityViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B18859FD1E81BF8200ADEC33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B18859FE1E81BF8200ADEC33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B1885A001E81BF8200ADEC33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 66R584JSQD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+				);
+				INFOPLIST_FILE = "Buddy Up/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = buddyUp.shellfire;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B1885A011E81BF8200ADEC33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 66R584JSQD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+				);
+				INFOPLIST_FILE = "Buddy Up/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+					"$(PROJECT_DIR)/Buddy\\ Up/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = buddyUp.shellfire;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B18859E51E81BF8200ADEC33 /* Build configuration list for PBXProject "Buddy Up" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B18859FD1E81BF8200ADEC33 /* Debug */,
+				B18859FE1E81BF8200ADEC33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B18859FF1E81BF8200ADEC33 /* Build configuration list for PBXNativeTarget "Buddy Up" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1885A001E81BF8200ADEC33 /* Debug */,
+				B1885A011E81BF8200ADEC33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B18859F41E81BF8200ADEC33 /* Buddy_Up.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B18859F51E81BF8200ADEC33 /* Buddy_Up.xcdatamodel */,
+			);
+			currentVersion = B18859F51E81BF8200ADEC33 /* Buddy_Up.xcdatamodel */;
+			path = Buddy_Up.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B18859E21E81BF8200ADEC33 /* Project object */;
+}
