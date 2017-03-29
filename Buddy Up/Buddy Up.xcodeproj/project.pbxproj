@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1416F431E8BA59B0022CA73 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1416F421E8BA59B0022CA73 /* ProfileViewController.swift */; };
 		B14F51B11E82452600CDE1D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F51B01E82452600CDE1D9 /* Main.storyboard */; };
 		B14F51B31E82452D00CDE1D9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14F51B21E82452D00CDE1D9 /* MainViewController.swift */; };
 		B14F51B51E8246D700CDE1D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F51B41E8246D700CDE1D9 /* LaunchScreen.storyboard */; };
@@ -29,25 +30,9 @@
 		B1D35E331E81CA810087EBDB /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35E231E81C9C00087EBDB /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1D35E341E81CA810087EBDB /* AWSDynamoDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35E241E81C9C00087EBDB /* AWSDynamoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1D35E351E81CA810087EBDB /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1D35E251E81C9C00087EBDB /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B1D35E4A1E820F150087EBDB /* NoSQLModelHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D35E431E820F150087EBDB /* NoSQLModelHelpers.swift */; };
-		B1D35E4B1E820F150087EBDB /* NoSQLQueryResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D35E441E820F150087EBDB /* NoSQLQueryResultViewController.swift */; };
-		B1D35E4C1E820F150087EBDB /* NoSQLSampleDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D35E451E820F150087EBDB /* NoSQLSampleDataGenerator.swift */; };
-		B1D35E4D1E820F150087EBDB /* NoSQLTableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D35E461E820F150087EBDB /* NoSQLTableFactory.swift */; };
-		B1D35E4E1E820F150087EBDB /* NoSQLTableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D35E471E820F150087EBDB /* NoSQLTableListViewController.swift */; };
-		B1D35E4F1E820F150087EBDB /* NoSQLTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D35E481E820F150087EBDB /* NoSQLTableViewController.swift */; };
-		B1D35E501E820F150087EBDB /* UserInfoTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D35E491E820F150087EBDB /* UserInfoTable.swift */; };
-		B1E4ABDF1E8210260095BB18 /* NoSQLDatabase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E4ABDE1E8210260095BB18 /* NoSQLDatabase.storyboard */; };
 		B1E4ABE21E82104D0095BB18 /* UserDataStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E4ABE11E82104D0095BB18 /* UserDataStorageViewController.swift */; };
 		B1E4ABE71E82106E0095BB18 /* UserDataStorage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E4ABE61E82106E0095BB18 /* UserDataStorage.storyboard */; };
-		B1E4ABE91E82108A0095BB18 /* UserFilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E4ABE81E82108A0095BB18 /* UserFilesViewController.swift */; };
-		B1E4ABEB1E82108F0095BB18 /* UserFiles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E4ABEA1E82108F0095BB18 /* UserFiles.storyboard */; };
-		B1E4ABEE1E8210AF0095BB18 /* UserIdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E4ABED1E8210AF0095BB18 /* UserIdentityViewController.swift */; };
-		B1E4ABF01E8210B80095BB18 /* UserIdentity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E4ABEF1E8210B80095BB18 /* UserIdentity.storyboard */; };
-		B1E4ABF41E8210DF0095BB18 /* ColorThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E4ABF21E8210DF0095BB18 /* ColorThemeSettings.swift */; };
-		B1E4ABF51E8210DF0095BB18 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E4ABF31E8210DF0095BB18 /* UserSettingsViewController.swift */; };
-		B1E4ABF71E8210EF0095BB18 /* UserSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1E4ABF61E8210EF0095BB18 /* UserSettings.storyboard */; };
 		B1E4ABF91E82111F0095BB18 /* AWSConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E4ABF81E82111F0095BB18 /* AWSConfiguration.swift */; };
-		B1E4ABFB1E8211350095BB18 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E4ABFA1E8211350095BB18 /* UserInfo.swift */; };
 		B1E4ABFD1E821B3B0095BB18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E4ABFC1E821B3B0095BB18 /* UIKit.framework */; };
 		B1F2DFCF1E81C34C00F2CE6A /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F2DFCE1E81C34C00F2CE6A /* AWSMobileClient.swift */; };
 /* End PBXBuildFile section */
@@ -71,7 +56,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B14F51B01E82452600CDE1D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B1416F421E8BA59B0022CA73 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B14F51B01E82452600CDE1D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "Buddy Up/Story Boards/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		B14F51B21E82452D00CDE1D9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B14F51B41E8246D700CDE1D9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B18436B21E81C52C00D1F430 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -91,25 +77,9 @@
 		B1D35E2B1E81C9D10087EBDB /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B1D35E2C1E81C9D10087EBDB /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		B1D35E2F1E81CA650087EBDB /* AWSCognitoIdentityProvider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognitoIdentityProvider.framework; sourceTree = "<group>"; };
-		B1D35E431E820F150087EBDB /* NoSQLModelHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSQLModelHelpers.swift; sourceTree = "<group>"; };
-		B1D35E441E820F150087EBDB /* NoSQLQueryResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSQLQueryResultViewController.swift; sourceTree = "<group>"; };
-		B1D35E451E820F150087EBDB /* NoSQLSampleDataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSQLSampleDataGenerator.swift; sourceTree = "<group>"; };
-		B1D35E461E820F150087EBDB /* NoSQLTableFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSQLTableFactory.swift; sourceTree = "<group>"; };
-		B1D35E471E820F150087EBDB /* NoSQLTableListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSQLTableListViewController.swift; sourceTree = "<group>"; };
-		B1D35E481E820F150087EBDB /* NoSQLTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoSQLTableViewController.swift; sourceTree = "<group>"; };
-		B1D35E491E820F150087EBDB /* UserInfoTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTable.swift; sourceTree = "<group>"; };
-		B1E4ABDE1E8210260095BB18 /* NoSQLDatabase.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NoSQLDatabase.storyboard; sourceTree = "<group>"; };
 		B1E4ABE11E82104D0095BB18 /* UserDataStorageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataStorageViewController.swift; sourceTree = "<group>"; };
 		B1E4ABE61E82106E0095BB18 /* UserDataStorage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserDataStorage.storyboard; sourceTree = "<group>"; };
-		B1E4ABE81E82108A0095BB18 /* UserFilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFilesViewController.swift; sourceTree = "<group>"; };
-		B1E4ABEA1E82108F0095BB18 /* UserFiles.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserFiles.storyboard; sourceTree = "<group>"; };
-		B1E4ABED1E8210AF0095BB18 /* UserIdentityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIdentityViewController.swift; sourceTree = "<group>"; };
-		B1E4ABEF1E8210B80095BB18 /* UserIdentity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserIdentity.storyboard; sourceTree = "<group>"; };
-		B1E4ABF21E8210DF0095BB18 /* ColorThemeSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorThemeSettings.swift; sourceTree = "<group>"; };
-		B1E4ABF31E8210DF0095BB18 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
-		B1E4ABF61E8210EF0095BB18 /* UserSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserSettings.storyboard; sourceTree = "<group>"; };
 		B1E4ABF81E82111F0095BB18 /* AWSConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSConfiguration.swift; sourceTree = "<group>"; };
-		B1E4ABFA1E8211350095BB18 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		B1E4ABFC1E821B3B0095BB18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B1F2DFCE1E81C34C00F2CE6A /* AWSMobileClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSMobileClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,11 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				B1AB8FF91E822F670009AFF2 /* SignIn.storyboard */,
-				B1E4ABF61E8210EF0095BB18 /* UserSettings.storyboard */,
-				B1E4ABEF1E8210B80095BB18 /* UserIdentity.storyboard */,
-				B1E4ABEA1E82108F0095BB18 /* UserFiles.storyboard */,
 				B1E4ABE61E82106E0095BB18 /* UserDataStorage.storyboard */,
-				B1E4ABDE1E8210260095BB18 /* NoSQLDatabase.storyboard */,
 				B14F51B41E8246D700CDE1D9 /* LaunchScreen.storyboard */,
 				B14F51B01E82452600CDE1D9 /* Main.storyboard */,
 			);
@@ -184,16 +150,13 @@
 		B1885A051E81C00B00ADEC33 /* Swift Files */ = {
 			isa = PBXGroup;
 			children = (
-				B1E4ABF11E8210CE0095BB18 /* UserSettings */,
-				B1E4ABEC1E8210A70095BB18 /* UserIdentity */,
-				B1E4ABE31E8210600095BB18 /* UserFiles */,
 				B1E4ABE01E8210420095BB18 /* UserDataStorage */,
-				B1D35E421E820F050087EBDB /* NoSQL */,
 				B1885A161E81C0C600ADEC33 /* SignIn */,
 				B1885A071E81C08500ADEC33 /* AppDelegate.swift */,
 				B1F2DFCE1E81C34C00F2CE6A /* AWSMobileClient.swift */,
 				B1E4ABF81E82111F0095BB18 /* AWSConfiguration.swift */,
 				B14F51B21E82452D00CDE1D9 /* MainViewController.swift */,
+				B1416F421E8BA59B0022CA73 /* ProfileViewController.swift */,
 			);
 			name = "Swift Files";
 			path = "Buddy Up/Swift Files";
@@ -226,52 +189,12 @@
 			path = "Buddy Up/Frameworks";
 			sourceTree = "<group>";
 		};
-		B1D35E421E820F050087EBDB /* NoSQL */ = {
-			isa = PBXGroup;
-			children = (
-				B1D35E431E820F150087EBDB /* NoSQLModelHelpers.swift */,
-				B1D35E441E820F150087EBDB /* NoSQLQueryResultViewController.swift */,
-				B1D35E451E820F150087EBDB /* NoSQLSampleDataGenerator.swift */,
-				B1D35E461E820F150087EBDB /* NoSQLTableFactory.swift */,
-				B1D35E471E820F150087EBDB /* NoSQLTableListViewController.swift */,
-				B1D35E481E820F150087EBDB /* NoSQLTableViewController.swift */,
-				B1D35E491E820F150087EBDB /* UserInfoTable.swift */,
-			);
-			path = NoSQL;
-			sourceTree = "<group>";
-		};
 		B1E4ABE01E8210420095BB18 /* UserDataStorage */ = {
 			isa = PBXGroup;
 			children = (
 				B1E4ABE11E82104D0095BB18 /* UserDataStorageViewController.swift */,
 			);
 			path = UserDataStorage;
-			sourceTree = "<group>";
-		};
-		B1E4ABE31E8210600095BB18 /* UserFiles */ = {
-			isa = PBXGroup;
-			children = (
-				B1E4ABFA1E8211350095BB18 /* UserInfo.swift */,
-				B1E4ABE81E82108A0095BB18 /* UserFilesViewController.swift */,
-			);
-			path = UserFiles;
-			sourceTree = "<group>";
-		};
-		B1E4ABEC1E8210A70095BB18 /* UserIdentity */ = {
-			isa = PBXGroup;
-			children = (
-				B1E4ABED1E8210AF0095BB18 /* UserIdentityViewController.swift */,
-			);
-			path = UserIdentity;
-			sourceTree = "<group>";
-		};
-		B1E4ABF11E8210CE0095BB18 /* UserSettings */ = {
-			isa = PBXGroup;
-			children = (
-				B1E4ABF21E8210DF0095BB18 /* ColorThemeSettings.swift */,
-				B1E4ABF31E8210DF0095BB18 /* UserSettingsViewController.swift */,
-			);
-			path = UserSettings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,13 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1AB8FFA1E822F670009AFF2 /* SignIn.storyboard in Resources */,
-				B1E4ABDF1E8210260095BB18 /* NoSQLDatabase.storyboard in Resources */,
-				B1E4ABF01E8210B80095BB18 /* UserIdentity.storyboard in Resources */,
 				B14F51B51E8246D700CDE1D9 /* LaunchScreen.storyboard in Resources */,
 				B14F51B11E82452600CDE1D9 /* Main.storyboard in Resources */,
-				B1E4ABEB1E82108F0095BB18 /* UserFiles.storyboard in Resources */,
 				B1E4ABE71E82106E0095BB18 /* UserDataStorage.storyboard in Resources */,
-				B1E4ABF71E8210EF0095BB18 /* UserSettings.storyboard in Resources */,
 				B18859F81E81BF8200ADEC33 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,24 +291,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1D35E4D1E820F150087EBDB /* NoSQLTableFactory.swift in Sources */,
-				B1E4ABFB1E8211350095BB18 /* UserInfo.swift in Sources */,
-				B1D35E4A1E820F150087EBDB /* NoSQLModelHelpers.swift in Sources */,
-				B1D35E4B1E820F150087EBDB /* NoSQLQueryResultViewController.swift in Sources */,
-				B1E4ABF51E8210DF0095BB18 /* UserSettingsViewController.swift in Sources */,
-				B1D35E4E1E820F150087EBDB /* NoSQLTableListViewController.swift in Sources */,
 				B1E4ABF91E82111F0095BB18 /* AWSConfiguration.swift in Sources */,
 				B1AB8FFC1E822F720009AFF2 /* SignInViewController.swift in Sources */,
 				B1F2DFCF1E81C34C00F2CE6A /* AWSMobileClient.swift in Sources */,
-				B1E4ABF41E8210DF0095BB18 /* ColorThemeSettings.swift in Sources */,
-				B1D35E4C1E820F150087EBDB /* NoSQLSampleDataGenerator.swift in Sources */,
+				B1416F431E8BA59B0022CA73 /* ProfileViewController.swift in Sources */,
 				B1885A091E81C08500ADEC33 /* AppDelegate.swift in Sources */,
 				B1E4ABE21E82104D0095BB18 /* UserDataStorageViewController.swift in Sources */,
-				B1D35E4F1E820F150087EBDB /* NoSQLTableViewController.swift in Sources */,
-				B1E4ABE91E82108A0095BB18 /* UserFilesViewController.swift in Sources */,
 				B14F51B31E82452D00CDE1D9 /* MainViewController.swift in Sources */,
-				B1D35E501E820F150087EBDB /* UserInfoTable.swift in Sources */,
-				B1E4ABEE1E8210AF0095BB18 /* UserIdentityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

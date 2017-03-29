@@ -14,8 +14,9 @@
 import UIKit
 import AWSMobileHubHelper
 
-class MainViewController: UITableViewController {
+class MainViewController: UITabBarController {
     
+    @IBOutlet weak var profileButton: UITabBar!
     var signInObserver: AnyObject!
     var signOutObserver: AnyObject!
     var willEnterForegroundObserver: AnyObject!
@@ -26,20 +27,15 @@ class MainViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
-        
-        // You need to call `- updateTheme` here in case the sign-in happens before `- viewWillAppear:` is called.
-        updateTheme()
+
         willEnterForegroundObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: OperationQueue.current) { _ in
-            self.updateTheme()
         }
         presentSignInViewController()
-        
         signInObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn, object: AWSIdentityManager.default(), queue: OperationQueue.main, using: {[weak self] (note: Notification) -> Void in
             guard let strongSelf = self else { return }
             print("Sign In Observer observed sign in.")
             strongSelf.setupRightBarButtonItem()
             // You need to call `updateTheme` here in case the sign-in happens after `- viewWillAppear:` is called.
-            strongSelf.updateTheme()
         })
         
         
@@ -47,7 +43,6 @@ class MainViewController: UITableViewController {
             guard let strongSelf = self else { return }
             print("Sign Out Observer observed sign out.")
             strongSelf.setupRightBarButtonItem()
-            strongSelf.updateTheme()
         })
         
         setupRightBarButtonItem()
@@ -77,29 +72,13 @@ class MainViewController: UITableViewController {
         }
     }
     
-    // MARK: - UITableViewController delegates
     
-    func updateTheme() {
-        let settings = ColorThemeSettings.sharedInstance
-        settings.loadSettings { (themeSettings: ColorThemeSettings?, error: Error?) -> Void in
-            guard let themeSettings = themeSettings else {
-                 print("Failed to load color: \(error)")
-                return
-            }
-            DispatchQueue.main.async(execute: {
-                let titleTextColor: UIColor = themeSettings.theme.titleTextColor.UIColorFromARGB()
-                self.navigationController!.navigationBar.barTintColor = themeSettings.theme.titleBarColor.UIColorFromARGB()
-                self.view.backgroundColor = themeSettings.theme.backgroundColor.UIColorFromARGB()
-                self.navigationController!.navigationBar.tintColor = titleTextColor
-                self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: titleTextColor]
-            })
-        }
-    }
+    
+    // MARK: - UITableViewController delegates
     
     
     func handleLogout() {
         if (AWSIdentityManager.default().isLoggedIn) {
-            ColorThemeSettings.sharedInstance.wipe()
             AWSIdentityManager.default().logout(completionHandler: {(result: Any?, error: Error?) in
                 self.navigationController!.popToRootViewController(animated: false)
                 self.setupRightBarButtonItem()
