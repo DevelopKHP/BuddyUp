@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First Login View Controller-->
+        <scene sceneID="mNL-Pj-SUf">
+            <objects>
+                <viewController restorationIdentifier="firstLogin" storyboardIdentifier="firstLogin" id="Ly3-Zy-kW6" customClass="FirstLoginViewController" customModule="Buddy_Up" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UtM-4d-JU5"/>
+                        <viewControllerLayoutGuide type="bottom" id="V6x-53-5wQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IB7-lt-2QT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="UserIdentityIcon" translatesAutoresizingMaskIntoConstraints="NO" id="LLq-kk-s9T">
+                                <rect key="frame" x="67" y="176" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjI-7U-L4K">
+                                <rect key="frame" x="67" y="363" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aju-Ic-MWR">
+                                <rect key="frame" x="164" y="571" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="insertSampleDataWithCompletionHandler" destination="Ly3-Zy-kW6" eventType="touchUpInside" id="pNr-55-h2F"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" keyboardDismissMode="interactive" text="Bio" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RYA-gU-JQD" userLabel="Bio">
+                                <rect key="frame" x="19.5" y="325" width="335" height="217"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LLq-kk-s9T" firstAttribute="centerX" secondItem="IB7-lt-2QT" secondAttribute="centerX" id="2lJ-3U-jXG"/>
+                            <constraint firstItem="Aju-Ic-MWR" firstAttribute="centerX" secondItem="IB7-lt-2QT" secondAttribute="centerX" id="61i-aW-yrf"/>
+                            <constraint firstItem="LLq-kk-s9T" firstAttribute="centerY" secondItem="IB7-lt-2QT" secondAttribute="centerY" constant="-120" id="Ici-Nt-FMu"/>
+                            <constraint firstItem="RYA-gU-JQD" firstAttribute="width" secondItem="IB7-lt-2QT" secondAttribute="width" constant="-40" id="M6b-ES-Jrd"/>
+                            <constraint firstItem="Aju-Ic-MWR" firstAttribute="centerY" secondItem="IB7-lt-2QT" secondAttribute="centerY" constant="240" id="QkB-jB-NqJ"/>
+                            <constraint firstItem="RYA-gU-JQD" firstAttribute="centerX" secondItem="IB7-lt-2QT" secondAttribute="centerX" id="Utq-50-roG"/>
+                            <constraint firstItem="fjI-7U-L4K" firstAttribute="centerY" secondItem="IB7-lt-2QT" secondAttribute="centerY" id="ae4-jI-Fby"/>
+                            <constraint firstItem="fjI-7U-L4K" firstAttribute="centerX" secondItem="IB7-lt-2QT" secondAttribute="centerX" id="lHW-ro-jk5"/>
+                            <constraint firstItem="RYA-gU-JQD" firstAttribute="centerY" secondItem="IB7-lt-2QT" secondAttribute="centerY" constant="100" id="sx7-r4-U0c"/>
+                            <constraint firstItem="RYA-gU-JQD" firstAttribute="height" secondItem="IB7-lt-2QT" secondAttribute="height" constant="-450" id="zJv-Za-lgj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bio" destination="RYA-gU-JQD" id="aeT-LR-6yq"/>
+                        <outlet property="userImageView" destination="LLq-kk-s9T" id="c0F-cO-7Si"/>
+                        <outlet property="userName" destination="fjI-7U-L4K" id="vVb-fm-K3C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZLX-9b-CaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1644" y="-772.26386806596713"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="UserIdentityIcon" width="50" height="50"/>
+    </resources>
+</document>

@@ -15,35 +15,41 @@
 import UIKit
 import AWSMobileHubHelper
 import FBSDKLoginKit
+import AWSDynamoDB
 
 class SignInViewController: UIViewController {
     @IBOutlet weak var facebookButton: UIButton!
     
     var didSignInObserver: AnyObject!
+    var willEnterForegroundObserver: AnyObject!
+
+    let identityManager = AWSIdentityManager.default()
     
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-         print("Sign In Loading.")
         
-            didSignInObserver =  NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn,
-                object: AWSIdentityManager.default(),
-                queue: OperationQueue.main,
-                using: {(note: Notification) -> Void in
-                    // perform successful login actions here
-            })
-
-                // Facebook login permissions can be optionally set, but must be set
-                // before user authenticates.
-                AWSFacebookSignInProvider.sharedInstance().setPermissions(["public_profile"]);
-                
-                // Facebook login behavior can be optionally set, but must be set
-                // before user authenticates.
-//                AWSFacebookSignInProvider.sharedInstance().setLoginBehavior(FBSDKLoginBehavior.Web.rawValue)
-                
-                // Facebook UI Setup
-                facebookButton.addTarget(self, action: #selector(SignInViewController.handleFacebookLogin), for: .touchUpInside)
+        super.viewDidLoad()
+        
+        print("Sign In Loading.")
+        
+        didSignInObserver =  NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn,
+                                                                    object: AWSIdentityManager.default(),
+                                                                    queue: OperationQueue.main,
+                                                                    using: {(note: Notification) -> Void in
+                                                                        // perform successful login actions here
+        })
+        
+        // Facebook login permissions can be optionally set, but must be set
+        // before user authenticates.
+        AWSFacebookSignInProvider.sharedInstance().setPermissions(["public_profile"]);
+        
+        // Facebook login behavior can be optionally set, but must be set
+        // before user authenticates.
+        //                AWSFacebookSignInProvider.sharedInstance().setLoginBehavior(FBSDKLoginBehavior.Web.rawValue)
+        
+        // Facebook UI Setup
+        facebookButton.addTarget(self, action: #selector(SignInViewController.handleFacebookLogin), for: .touchUpInside)
     }
     
     deinit {
@@ -57,23 +63,62 @@ class SignInViewController: UIViewController {
     // MARK: - Utility Methods
     
     func handleLoginWithSignInProvider(_ signInProvider: AWSSignInProvider) {
-        AWSIdentityManager.default().login(signInProvider: signInProvider, completionHandler: {(result: Any?, error: Error?) in
+        let objectMapper = AWSDynamoDBObjectMapper.default()
+        
+        AWSIdentityManager.default().login(signInProvider: signInProvider, completionHandler: {(result, error) -> Void in
             // If no error reported by SignInProvider, discard the sign-in view controller.
-            if error == nil {
-                DispatchQueue.main.async(execute: {
-                    self.presentingViewController?.dismiss(animated: true, completion: nil)
-                })
+            if error != nil {
+                print("result = \(String(describing: result)), error = \(String(describing: error))")
             }
-             print("result = \(result), error = \(error)")
-        })
-    }
+            else{
+                var firstTime : Bool = true
+                objectMapper.load(UserInfo.self, hashKey: self.identityManager.identityId as Any, rangeKey:nil).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
+                    if let error = task.error as NSError? {
+                        print("The request failed. Error: \(error)")
+                    }
+                    else if (task.result as? UserInfo) != nil {
+                        // Do something with task.result.
+                        let user = task.result as! UserInfo
+                        if (user == nil){
+                            print("task = ", task.result as Any)
+                            firstTime = true
+                        }
+                    }
+                    if (firstTime == true){
+                        DispatchQueue.main.async(execute: {
+                            let storyboard = UIStoryboard(name: "FirstSignIn", bundle: nil)
+                            let viewController = storyboard.instantiateViewController(withIdentifier: "firstLogin")
+                            self.present(viewController, animated: true, completion: nil)
+                            //UIApplication.shared.keyWindow?.rootViewController = viewController
+                        })
+                        
+                    }
+                    else{
+                        DispatchQueue.main.async(execute: {
+                            let storyboard = UIStoryboard(name: "Pages", bundle: nil)
+                            let viewController = storyboard.instantiateViewController(withIdentifier: "Home")
+                            self.present(viewController, animated: true, completion: nil)
+                            //UIApplication.shared.keyWindow?.rootViewController = viewController
+                        })
+                        
+                    }
+                    return nil
+                })
 
+            }
+        })
+        
+        
+        
+    }
+    
     func showErrorDialog(_ loginProviderName: String, withError error: NSError) {
          print("\(loginProviderName) failed to sign in w/ error: \(error)")
         let alertController = UIAlertController(title: NSLocalizedString("Sign-in Provider Sign-In Error", comment: "Sign-in error for sign-in failure."), message: NSLocalizedString("\(loginProviderName) failed to sign in w/ error: \(error)", comment: "Sign-in message structure for sign-in failure."), preferredStyle: .alert)
         let doneAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Label to cancel sign-in failure."), style: .cancel, handler: nil)
         alertController.addAction(doneAction)
         present(alertController, animated: true, completion: nil)
+        
     }
 
     // MARK: - IBActions

@@ -30,7 +30,7 @@
 			<key>Default</key>
 			<dict>
 				<key>Region</key>
-				<string>us-west-2</string>
+				<string>us-west-1</string>
 			</dict>
 		</dict>
 		<key>IdentityManager</key>
@@ -56,10 +56,6 @@
 	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -147,6 +143,10 @@
 	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>To select a file to upload.</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

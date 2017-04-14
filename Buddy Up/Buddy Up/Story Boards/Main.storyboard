@@ -1,163 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p1Q-oH-ibG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IR1-Hg-4fA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Match-->
-        <scene sceneID="x7b-TM-4Ev">
+        <!--Sign-In View Controller-->
+        <scene sceneID="bM5-yf-l4r">
             <objects>
-                <viewController title="Match" id="Ur3-eb-QLa" sceneMemberID="viewController">
+                <viewController restorationIdentifier="SignIn" storyboardIdentifier="SignIn" title="Sign-In View Controller" id="IR1-Hg-4fA" customClass="SignInViewController" customModule="Buddy_Up" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tfu-f9-C4s"/>
-                        <viewControllerLayoutGuide type="bottom" id="b71-wG-Gnc"/>
+                        <viewControllerLayoutGuide type="top" id="hCA-HA-9hr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yip-rX-uqy"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="enj-qg-8jp">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Match" id="wPC-sA-GFV"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AwJ-hP-o6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2497" y="80"/>
-        </scene>
-        <!--Home-->
-        <scene sceneID="onF-8W-w51">
-            <objects>
-                <viewController title="Home" id="hZp-Xt-MNY" customClass="MainViewController" customModule="Buddy_Up" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dVD-iK-tdS"/>
-                        <viewControllerLayoutGuide type="bottom" id="rks-bp-1ZF"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="plX-Qv-4mx">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="wdB-7O-iFI"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hQz-Ps-UDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2497" y="-567"/>
-        </scene>
-        <!--Main View Controller-->
-        <scene sceneID="s8m-ta-Jut">
-            <objects>
-                <tabBarController id="a1g-DF-Sxr" customClass="MainViewController" customModule="Buddy_Up" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="RTT-IK-i2W"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="d1r-Os-uzV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="hZp-Xt-MNY" kind="relationship" relationship="viewControllers" id="C7o-mv-GsG"/>
-                        <segue destination="Ur3-eb-QLa" kind="relationship" relationship="viewControllers" id="F9y-ob-fSr"/>
-                        <segue destination="wGa-u8-LUi" kind="relationship" relationship="viewControllers" id="q7g-8C-mzJ"/>
-                        <segue destination="8z7-i9-YLa" kind="relationship" relationship="viewControllers" id="Xp9-6X-WIh"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="89L-1i-SKy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1380" y="457"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="iLu-if-voD">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p1Q-oH-ibG" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Llk-Fw-3VQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.96078431372549022" green="0.52156862745098043" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="a1g-DF-Sxr" kind="relationship" relationship="rootViewController" id="Sld-F1-ZfD"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5ih-jC-buG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="665.625" y="467.95774647887322"/>
-        </scene>
-        <!--Workout-->
-        <scene sceneID="3VC-Xe-Ogs">
-            <objects>
-                <viewController title="Workout" id="wGa-u8-LUi" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Y6c-75-amK"/>
-                        <viewControllerLayoutGuide type="bottom" id="dSl-ZF-hiu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eCf-jb-228">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Workout" id="Kp2-3k-AkU"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hf2-5A-eyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2497" y="735"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="cUr-uQ-VsA">
-            <objects>
-                <viewController title="Profile" id="8z7-i9-YLa" customClass="ProfileViewController" customModule="Buddy_Up" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QjW-7y-gct"/>
-                        <viewControllerLayoutGuide type="bottom" id="wco-80-YuW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="I2q-N8-7Dc">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <view key="view" contentMode="scaleToFill" id="wwr-xC-xUs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UserIcon" translatesAutoresizingMaskIntoConstraints="NO" id="WoF-y9-ntB">
-                                <rect key="frame" x="67" y="114" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qd-pp-hzB">
-                                <rect key="frame" x="148" y="303" width="79" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Buddy Up" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihe-Yi-TDq">
+                                <rect key="frame" x="108" y="88" width="159" height="55"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="32"/>
+                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRf-wl-hff">
-                                <rect key="frame" x="159" y="362" width="57" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNe-Hr-DQw" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="87" y="423" width="200" height="37"/>
+                                <state key="normal" image="FacebookButton"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In With" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UA-nT-cvX">
+                                <rect key="frame" x="144" y="343" width="87" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ihe-Yi-TDq" firstAttribute="centerX" secondItem="wwr-xC-xUs" secondAttribute="centerX" id="6lZ-UH-1Aq"/>
+                            <constraint firstItem="pNe-Hr-DQw" firstAttribute="centerX" secondItem="wwr-xC-xUs" secondAttribute="centerX" id="B9Q-7b-xwV"/>
+                            <constraint firstItem="1UA-nT-cvX" firstAttribute="centerY" secondItem="wwr-xC-xUs" secondAttribute="centerY" constant="20" id="Pf9-jI-KRd"/>
+                            <constraint firstItem="pNe-Hr-DQw" firstAttribute="centerY" secondItem="wwr-xC-xUs" secondAttribute="centerY" constant="90" id="oxX-fU-BPe"/>
+                            <constraint firstItem="ihe-Yi-TDq" firstAttribute="centerY" secondItem="wwr-xC-xUs" secondAttribute="centerY" constant="-200" id="vcy-dw-fIr"/>
+                            <constraint firstItem="1UA-nT-cvX" firstAttribute="centerX" secondItem="wwr-xC-xUs" secondAttribute="centerX" id="yml-te-BUs"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="UserProfileDataSmall" id="pVR-k4-abg"/>
+                    <navigationItem key="navigationItem" id="vLR-1H-7wf"/>
                     <connections>
-                        <outlet property="profileImage" destination="WoF-y9-ntB" id="3pt-ha-c54"/>
-                        <outlet property="userID" destination="fRf-wl-hff" id="mz0-JT-IHB"/>
-                        <outlet property="username" destination="2Qd-pp-hzB" id="z2K-y9-ZCI"/>
+                        <outlet property="facebookButton" destination="pNe-Hr-DQw" id="Afo-FA-skx"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DtF-da-VXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hM0-dp-8P3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2497" y="1471"/>
+            <point key="canvasLocation" x="769" y="-106"/>
         </scene>
     </scenes>
     <resources>
-        <image name="UserIcon" width="150" height="150"/>
-        <image name="UserProfileDataSmall" width="30" height="30"/>
+        <image name="FacebookButton" width="240" height="37"/>
     </resources>
 </document>

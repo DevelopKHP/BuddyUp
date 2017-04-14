@@ -1,39 +1,33 @@
 //
-//  ProfileViewController.swift
+//  FirstLoginViewController.swift
 //  Buddy Up
 //
-//  Created by Kyle Phan on 3/29/17.
+//  Created by Kyle Phan on 4/2/17.
 //  Copyright © 2017 Kyle Phan. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import Foundation
+import CoreData
 import AWSMobileHubHelper
 import AWSDynamoDB
 
-class ProfileViewController: UIViewController{
-
-    @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var bio: UITextView!
+class FirstLoginViewController: UIViewController, UITextViewDelegate {
     
     var willEnterForegroundObserver: AnyObject!
     // MARK: - View lifecycle
+    
+    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var bio: UITextView!
+    let identityManager = AWSIdentityManager.default()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-
-        willEnterForegroundObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: OperationQueue.current) { _ in
-        }
-        
-        presentSignInViewController()
-        
-        let identityManager = AWSIdentityManager.default()
-        
-        
         userName.text = identityManager.userName
+        
         if let imageURL = identityManager.imageURL {
             let imageData = try! Data(contentsOf: imageURL)
             if let profileImage = UIImage(data: imageData) {
@@ -49,7 +43,6 @@ class ProfileViewController: UIViewController{
             UIColor.black.cgColor
         bio.layer.borderWidth = 1.0
         bio.isScrollEnabled = false
-
     }
     
     func keyboardWillShow(notification: NSNotification) {
@@ -76,19 +69,12 @@ class ProfileViewController: UIViewController{
             bio.clearsOnInsertion = true
         }
     }
-    
-    @IBAction func cancelButton(_ sender: UIButton) {
-        //resets profile page
-        bio.text = "Bio"
-    }
-    
-    @IBAction func saveButton(_ sender: UIButton) {
-        //updates profile page
-        let identityManager = AWSIdentityManager.default()
-        let objectMapper = AWSDynamoDBObjectMapper.default()
-        let group: DispatchGroup = DispatchGroup()
-        var errors: [NSError] = []
 
+    @IBAction func insertSampleDataWithCompletionHandler() {
+        let objectMapper = AWSDynamoDBObjectMapper.default()
+        var errors: [NSError] = []
+        let group: DispatchGroup = DispatchGroup()
+        
         
         let newUser: UserInfo! = UserInfo()
         let name = identityManager.userName?.components(separatedBy: " ")
@@ -98,7 +84,17 @@ class ProfileViewController: UIViewController{
         newUser._lastName = name?[(name?.count)! - 1]
         newUser._matches = nil
         
+        
         group.enter()
+        
+        if(newUser._bio == "Bio"){
+            var message: String = "You need to fill out a bio to continue!"
+            let alartController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+            alartController.addAction(dismissAction)
+            self.present(alartController, animated: true, completion: nil)
+        }
+        
         objectMapper.save(newUser, completionHandler: {(error: Error?) -> Void in
             if let error = error as NSError? {
                 DispatchQueue.main.async(execute: {
@@ -115,31 +111,5 @@ class ProfileViewController: UIViewController{
         })
 
     }
-    
-    func presentSignInViewController() {
-        if !AWSIdentityManager.default().isLoggedIn {
-            let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "SignIn")
-            self.present(viewController, animated: true, completion: nil)
-        }
-    }
-    
-    
-    
-    // MARK: - UITableViewController delegates
-    
-    
-    
-    func handleLogout() {
-        if (AWSIdentityManager.default().isLoggedIn) {
-            AWSIdentityManager.default().logout(completionHandler: {(result: Any?, error: Error?) in
-                self.navigationController!.popToRootViewController(animated: false)
-                self.presentSignInViewController()
-            })
-            // print("Logout Successful: \(signInProvider.getDisplayName)");
-        } else {
-            assert(false)
-        }
-    }
-}
 
+}
