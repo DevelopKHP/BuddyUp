@@ -71,19 +71,23 @@ class SignInViewController: UIViewController {
                 print("result = \(String(describing: result)), error = \(String(describing: error))")
             }
             else{
-                var firstTime : Bool = true
+                var firstTime : Bool = false
                 objectMapper.load(UserInfo.self, hashKey: self.identityManager.identityId as Any, rangeKey:nil).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
                     if let error = task.error as NSError? {
                         print("The request failed. Error: \(error)")
                     }
                     else if (task.result as? UserInfo) != nil {
-                        // Do something with task.result.
+                        // Checks database for user infor
                         let user = task.result as! UserInfo
                         if (user == nil){
                             print("task = ", task.result as Any)
                             firstTime = true
                         }
                     }
+                    else{
+                        firstTime = true
+                    }
+                    // First time user
                     if (firstTime == true){
                         DispatchQueue.main.async(execute: {
                             let storyboard = UIStoryboard(name: "FirstSignIn", bundle: nil)
