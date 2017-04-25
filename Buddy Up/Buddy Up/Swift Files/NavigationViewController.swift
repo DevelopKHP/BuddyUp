@@ -21,9 +21,11 @@ class NavigationViewController: UIViewController {
     
     override func viewDidLoad() {
         if !(AWSIdentityManager.default().isLoggedIn) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "SignIn")
-            present(viewController, animated: true, completion: nil)
+            DispatchQueue.main.async(execute: {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "SignIn")
+                self.present(viewController, animated: true, completion: nil)
+            })
         }
         else{
             willEnterForegroundObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: OperationQueue.current) { _ in
@@ -44,7 +46,7 @@ class NavigationViewController: UIViewController {
             print("Already in Home Page")
         }
         else{
-            DispatchQueue.main.async(execute: {
+            //DispatchQueue.main.async(execute: {
                 self.homeButton.setTitleColor(UIColor.black, for: [])
                 self.matchButton.setTitleColor(UIColor.orange, for: [])
                 self.workoutButton.setTitleColor(UIColor.orange, for: [])
@@ -53,7 +55,7 @@ class NavigationViewController: UIViewController {
                 let viewController = storyboard.instantiateViewController(withIdentifier: "Home")
                 self.present(viewController, animated: true, completion: nil)
                 //UIApplication.shared.keyWindow?.rootViewController = viewController
-            })
+            //})
 
         }
 
@@ -64,7 +66,7 @@ class NavigationViewController: UIViewController {
             print("Already in Match Page")
         }
         else{
-            DispatchQueue.main.async(execute: {
+            //DispatchQueue.main.async(execute: {
                 self.homeButton.setTitleColor(UIColor.orange, for: [])
                 self.matchButton.setTitleColor(UIColor.black, for: [])
                 self.workoutButton.setTitleColor(UIColor.orange, for: [])
@@ -73,7 +75,7 @@ class NavigationViewController: UIViewController {
                 let viewController = storyboard.instantiateViewController(withIdentifier: "Match")
                 self.present(viewController, animated: true, completion: nil)
                 //UIApplication.shared.keyWindow?.rootViewController = viewController
-            })
+            //})
         }
     }
     
@@ -82,7 +84,7 @@ class NavigationViewController: UIViewController {
             print("Already in Workout Page")
         }
         else{
-            DispatchQueue.main.async(execute: {
+            //DispatchQueue.main.async(execute: {
                 self.homeButton.setTitleColor(UIColor.orange, for: [])
                 self.matchButton.setTitleColor(UIColor.orange, for: [])
                 self.workoutButton.setTitleColor(UIColor.black, for: [])
@@ -91,7 +93,7 @@ class NavigationViewController: UIViewController {
                 let viewController = storyboard.instantiateViewController(withIdentifier: "Workout")
                 self.present(viewController, animated: true, completion: nil)
                 //UIApplication.shared.keyWindow?.rootViewController = viewController
-            })
+            //})
         }
     }
     
@@ -100,7 +102,7 @@ class NavigationViewController: UIViewController {
             print("Already in Profile Page")
         }
         else{
-            DispatchQueue.main.async(execute: {
+            //DispatchQueue.main.async(execute: {
                 self.homeButton.setTitleColor(UIColor.orange, for: [])
                 self.matchButton.setTitleColor(UIColor.orange, for: [])
                 self.workoutButton.setTitleColor(UIColor.orange, for: [])
@@ -109,7 +111,7 @@ class NavigationViewController: UIViewController {
                 let viewController = storyboard.instantiateViewController(withIdentifier: "Profile")
                 self.present(viewController, animated: true, completion: nil)
                 //UIApplication.shared.keyWindow?.rootViewController = viewController
-            })
+            //})
         }
 
     }

@@ -20,6 +20,7 @@ class MainViewController: UIViewController {
    
     var willEnterForegroundObserver: AnyObject!
     
+    @IBOutlet weak var workoutTableView: UITableView!
     let objectMapper = AWSDynamoDBObjectMapper.default()
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var noMatches: UILabel!
@@ -27,7 +28,7 @@ class MainViewController: UIViewController {
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
-        /*if !(AWSIdentityManager.default().isLoggedIn) {
+        if !(AWSIdentityManager.default().isLoggedIn) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "SignIn")
             present(viewController, animated: true, completion: nil)
@@ -37,26 +38,14 @@ class MainViewController: UIViewController {
             }
             super.viewDidLoad()
         }
-        */
+ 
         super.viewDidLoad()
-        /*let identityManager = AWSIdentityManager.default()
-        objectMapper.load(UserInfo.self, hashKey: identityManager.identityId as Any, rangeKey:nil).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
-            if let error = task.error as NSError? {
-                print("The request failed. Error: \(error)")
-            }
-            else if (task.result as? UserInfo) != nil {
-                // Do something with task.result.
-                print("Please print: ", task.result as Any)
-            }
-            let user = task.result as! UserInfo
-            print(user)
-            return nil
-        })
-         */
-        
-
         
        
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
   
 }

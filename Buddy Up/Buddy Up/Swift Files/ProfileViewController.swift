@@ -16,11 +16,13 @@ class ProfileViewController: UIViewController{
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var bio: UITextView!
-    
+    var user = UserInfo()
     var willEnterForegroundObserver: AnyObject!
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
+        let objectMapper = AWSDynamoDBObjectMapper.default()
+        
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -42,14 +44,28 @@ class ProfileViewController: UIViewController{
                 userImageView.image = UIImage(named: "UserIcon")
             }
         }
-        bio.textColor = UIColor.lightGray
-        bio.layer.cornerRadius = 5
-        bio.clipsToBounds = true
-        bio.layer.borderColor =
+        objectMapper.load(UserInfo.self, hashKey: identityManager.identityId as Any, rangeKey:nil).continueWith(block: {
+            (task:AWSTask<AnyObject>!) -> Any? in
+            if let error = task.error as NSError? {
+                print("The request failed. Error: \(error)")
+            }
+            else if (task.result as? UserInfo) != nil {
+                DispatchQueue.main.async {
+                    self.user = task.result as! UserInfo
+                    self.bio.text = self.user?._bio
+                }
+            }
+            return nil
+        })
+        DispatchQueue.main.async(){
+            self.bio.textColor = UIColor.lightGray
+            self.bio.layer.cornerRadius = 5
+            self.bio.clipsToBounds = true
+            self.bio.layer.borderColor =
             UIColor.black.cgColor
-        bio.layer.borderWidth = 1.0
-        bio.isScrollEnabled = false
-
+            self.bio.layer.borderWidth = 1.0
+            self.bio.isScrollEnabled = false
+        }
     }
     
     func keyboardWillShow(notification: NSNotification) {
@@ -71,7 +87,7 @@ class ProfileViewController: UIViewController{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
         if(bio.text == ""){
-            bio.text = "Bio"
+            bio.text = self.user?._bio
             bio.textColor = UIColor.lightGray
             bio.clearsOnInsertion = true
         }
@@ -79,7 +95,7 @@ class ProfileViewController: UIViewController{
     
     @IBAction func cancelButton(_ sender: UIButton) {
         //resets profile page
-        bio.text = "Bio"
+        bio.text = self.user?._bio
     }
     
     @IBAction func saveButton(_ sender: UIButton) {
