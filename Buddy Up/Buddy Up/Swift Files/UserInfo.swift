@@ -18,10 +18,13 @@ import AWSDynamoDB
 class UserInfo: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var _userId: String?
+    var _allUsers: [String]?
     var _bio: String?
     var _firstName: String?
+    var _graphRequest: String?
     var _lastName: String?
     var _matches: [String]?
+    var _rejected: [String]?
     
     class func dynamoDBTableName() -> String {
         
@@ -36,10 +39,13 @@ class UserInfo: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     override class func jsonKeyPathsByPropertyKey() -> [AnyHashable: Any] {
         return [
             "_userId" : "userId",
+            "_allUsers" : "allUsers",
             "_bio" : "bio",
             "_firstName" : "firstName",
+            "_graphRequest" : "graphRequest",
             "_lastName" : "lastName",
             "_matches" : "matches",
+            "_rejected" : "rejected",
         ]
     }
 }

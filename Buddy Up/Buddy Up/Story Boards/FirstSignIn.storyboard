@@ -38,7 +38,7 @@
                                     <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="insertSampleDataWithCompletionHandler" destination="Ly3-Zy-kW6" eventType="touchUpInside" id="pNr-55-h2F"/>
+                                    <action selector="save" destination="Ly3-Zy-kW6" eventType="touchUpInside" id="7Te-HG-QQU"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" keyboardDismissMode="interactive" text="Bio" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RYA-gU-JQD" userLabel="Bio">

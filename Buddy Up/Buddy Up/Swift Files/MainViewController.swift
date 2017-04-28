@@ -20,8 +20,6 @@ class MainViewController: UIViewController {
    
     var willEnterForegroundObserver: AnyObject!
     
-    @IBOutlet weak var workoutTableView: UITableView!
-    let objectMapper = AWSDynamoDBObjectMapper.default()
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var noMatches: UILabel!
     

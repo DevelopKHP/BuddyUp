@@ -11,16 +11,17 @@ import Foundation
 import CoreData
 import AWSMobileHubHelper
 import AWSDynamoDB
+import FBSDKCoreKit
 
 class FirstLoginViewController: UIViewController, UITextViewDelegate {
     
-    var willEnterForegroundObserver: AnyObject!
     // MARK: - View lifecycle
     
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var bio: UITextView!
     let identityManager = AWSIdentityManager.default()
+    let objectMapper = AWSDynamoDBObjectMapper.default()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,13 +70,16 @@ class FirstLoginViewController: UIViewController, UITextViewDelegate {
             bio.clearsOnInsertion = true
         }
     }
+    
 
-    @IBAction func insertSampleDataWithCompletionHandler() {
-        let objectMapper = AWSDynamoDBObjectMapper.default()
+    @IBAction func save() {
+        
         var errors: [NSError] = []
         let group: DispatchGroup = DispatchGroup()
         
-        
+        //Adding to All Users Table //
+        group.enter()
+                // Adding to UserInfo Table //
         let newUser: UserInfo! = UserInfo()
         let name = identityManager.userName?.components(separatedBy: " ")
         newUser._userId = identityManager.identityId!
@@ -83,7 +87,39 @@ class FirstLoginViewController: UIViewController, UITextViewDelegate {
         newUser._firstName = name?[0]
         newUser._lastName = name?[(name?.count)! - 1]
         newUser._matches = nil
+        newUser._graphRequest = FBSDKAccessToken.current().userID
+        /* let scanExpression = AWSDynamoDBScanExpression()
         
+        
+        objectMapper.scan(UserInfo.self, expression: scanExpression).continueWith { (task:AWSTask<AWSDynamoDBPaginatedOutput>) -> Any? in
+            if let error = task.error as NSError? {
+                print("The request failed. Error: \(error)")
+            }
+            else if (task.result) != nil {
+                for i in 1...Int((task.result?.items.count)!){
+                    let tableRow = task.result as! AWSDynamoDBPaginatedOutput
+                    let description = tableRow.items.description.components(separatedBy: " ")
+                    var index = [Int]()
+                    let last = description.count - 1
+                    for i in (1...last) {
+                        group.enter()
+                        if(description[i].range(of: "userId") != nil){
+                            print("Hit")
+                            print(description[i])
+                            print(description[i+2])
+                            newUser._allUsers?.insert(description[i+2], at: 0)
+                            group.leave()
+                        }
+                    }
+                    
+                }
+                
+            }
+            
+            return nil
+        }
+         */
+
         
         group.enter()
         
@@ -103,10 +139,32 @@ class FirstLoginViewController: UIViewController, UITextViewDelegate {
             }
             group.leave()
         })
+        
+        // Adding to Workout Table //
+        group.enter()
+        let intialData: Workout! = Workout()
+        let dayOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        let workout = ["Workout of the Day", "Workout of the Day", "Workout of the Day", "Workout of the Day", "Workout of the Day", "Workout of the Day", "Workout of the Day",]
+        intialData?._userId = identityManager.identityId
+        intialData?._daysOfTheWeek = dayOfWeek
+        intialData?._workout = workout
+        objectMapper.save(intialData, completionHandler: {(error: Error?) -> Void in
+            if let error = error as NSError?{
+                DispatchQueue.main.async(execute:{
+                    errors.append(error)
+                })
+                
+            }
+            group.leave()
+        })
+        
+        
+        group.enter()
         DispatchQueue.main.async(execute: {
             let storyboard = UIStoryboard(name: "Pages", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "Home")
             self.present(viewController, animated: true, completion: nil)
+            group.leave()
             //UIApplication.shared.keyWindow?.rootViewController = viewController
         })
 
