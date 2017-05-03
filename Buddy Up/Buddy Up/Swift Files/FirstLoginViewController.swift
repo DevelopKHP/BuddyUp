@@ -88,43 +88,12 @@ class FirstLoginViewController: UIViewController, UITextViewDelegate {
         newUser._lastName = name?[(name?.count)! - 1]
         newUser._matches = nil
         newUser._graphRequest = FBSDKAccessToken.current().userID
-        /* let scanExpression = AWSDynamoDBScanExpression()
-        
-        
-        objectMapper.scan(UserInfo.self, expression: scanExpression).continueWith { (task:AWSTask<AWSDynamoDBPaginatedOutput>) -> Any? in
-            if let error = task.error as NSError? {
-                print("The request failed. Error: \(error)")
-            }
-            else if (task.result) != nil {
-                for i in 1...Int((task.result?.items.count)!){
-                    let tableRow = task.result as! AWSDynamoDBPaginatedOutput
-                    let description = tableRow.items.description.components(separatedBy: " ")
-                    var index = [Int]()
-                    let last = description.count - 1
-                    for i in (1...last) {
-                        group.enter()
-                        if(description[i].range(of: "userId") != nil){
-                            print("Hit")
-                            print(description[i])
-                            print(description[i+2])
-                            newUser._allUsers?.insert(description[i+2], at: 0)
-                            group.leave()
-                        }
-                    }
-                    
-                }
-                
-            }
-            
-            return nil
-        }
-         */
 
         
         group.enter()
         
         if(newUser._bio == "Bio"){
-            var message: String = "You need to fill out a bio to continue!"
+            let message: String = "You need to fill out a bio to continue!"
             let alartController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
             let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
             alartController.addAction(dismissAction)
