@@ -21,34 +21,6 @@ class MatchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let scanExpression = AWSDynamoDBScanExpression()
-         
-        let objectMapper = AWSDynamoDBObjectMapper.default()
-        let newUser: UserInfo! = UserInfo()
-        objectMapper.scan(UserInfo.self, expression: scanExpression).continueWith { (task:AWSTask<AWSDynamoDBPaginatedOutput>) -> Any? in
-            if let error = task.error as NSError? {
-                print("The request failed. Error: \(error)")
-            }
-            else if (task.result) != nil {
-                for i in 1...Int((task.result?.items.count)!){
-                    let tableRow = task.result!
-                    let description = tableRow.items.description.components(separatedBy: " ")
-                    var index = [Int]()
-                    let last = description.count - 1
-                    for j in (1...last) {
-                        if(description[j].range(of: "userId") != nil){
-                            print("Hit")
-                            print(description[i])
-                            print(description[i+2])
-                            newUser._allUsers?.insert(description[i+2], at: 0)
-                        }
-                    }
-                }
-            }
-            
-            return nil
-        }
-        
     }
     @IBOutlet weak var dislikeButton: UIButton!
     @IBAction func likeButton(_ sender: Any) {

@@ -36,8 +36,62 @@ class MainViewController: UIViewController {
             }
             super.viewDidLoad()
         }
- 
+        
+        let scanExpression = AWSDynamoDBScanExpression()
+        var errors: [NSError] = []
+        let objectMapper = AWSDynamoDBObjectMapper.default()
+        let identityManager = AWSIdentityManager.default()
+        var newUser: UserInfo! = UserInfo()
+        var collection = [String]()
+        DispatchQueue.main.async{
+            objectMapper.load(UserInfo.self, hashKey: identityManager.identityId as Any, rangeKey:nil).continueWith(block: {
+                (task:AWSTask<AnyObject>!) -> Any? in
+                if let error = task.error as NSError? {
+                    errors.append(error)
+                }
+                else if (task.result as? UserInfo) != nil {
+                    DispatchQueue.main.async {
+                        newUser = task.result as! UserInfo
+                    }
+                }
+                return nil
+            })
+            objectMapper.scan(UserInfo.self, expression: scanExpression).continueWith { (task:AWSTask<AWSDynamoDBPaginatedOutput>) -> Any? in
+                if let error = task.error as NSError? {
+                    errors.append(error)
+                }
+                else if (task.result) != nil {
+                    for i in 1...Int((task.result?.items.count)!){
+                        let tableRow = task.result!
+                        let description = tableRow.items.description.components(separatedBy: " ")
+                        
+                        let last = description.count - 1
+                        for j in (1...last) {
+                            if(description[j].range(of: "userId") != nil){
+                                print("Hit")
+                                print(description[j])
+                                print(description[j+2])
+                                collection.append(description[j+2])
+                            }
+                        }
+                    }
+                }
+                newUser._allUsers = collection
+                return nil
+            }
+            
+            objectMapper.save(newUser, completionHandler: {(error: Error?) -> Void in
+                if let error = error as NSError? {
+                    DispatchQueue.main.async(execute: {
+                        errors.append(error)
+                    })
+                }
+            })
+
+        }
         super.viewDidLoad()
+        
+        
         
        
     }
