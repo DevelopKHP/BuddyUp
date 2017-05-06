@@ -12,7 +12,7 @@ import AWSMobileHubHelper
 class NavigationViewController: UIViewController {
 
     var willEnterForegroundObserver: AnyObject!
-
+    var matchFlag : Bool!
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var matchButton: UIButton!
     @IBOutlet weak var workoutButton: UIButton!
@@ -20,6 +20,7 @@ class NavigationViewController: UIViewController {
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         if !(AWSIdentityManager.default().isLoggedIn) {
             DispatchQueue.main.async(execute: {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -30,7 +31,6 @@ class NavigationViewController: UIViewController {
         else{
             willEnterForegroundObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: OperationQueue.current) { _ in
             }
-            super.viewDidLoad()
         }
     }
     
@@ -51,7 +51,7 @@ class NavigationViewController: UIViewController {
                 self.matchButton.setTitleColor(UIColor.orange, for: [])
                 self.workoutButton.setTitleColor(UIColor.orange, for: [])
                 self.profileButton.setTitleColor(UIColor.orange, for: [])
-                let storyboard = UIStoryboard(name: "Pages", bundle: nil)
+                let storyboard = UIStoryboard(name: "Home", bundle: nil)
                 let viewController = storyboard.instantiateViewController(withIdentifier: "Home")
                 self.present(viewController, animated: true, completion: nil)
                 //UIApplication.shared.keyWindow?.rootViewController = viewController
@@ -71,7 +71,7 @@ class NavigationViewController: UIViewController {
                 self.matchButton.setTitleColor(UIColor.black, for: [])
                 self.workoutButton.setTitleColor(UIColor.orange, for: [])
                 self.profileButton.setTitleColor(UIColor.orange, for: [])
-                let storyboard = UIStoryboard(name: "Pages", bundle: nil)
+                let storyboard = UIStoryboard(name: "Match", bundle: nil)
                 let viewController = storyboard.instantiateViewController(withIdentifier: "Match")
                 self.present(viewController, animated: true, completion: nil)
                 //UIApplication.shared.keyWindow?.rootViewController = viewController
@@ -89,7 +89,7 @@ class NavigationViewController: UIViewController {
                 self.matchButton.setTitleColor(UIColor.orange, for: [])
                 self.workoutButton.setTitleColor(UIColor.black, for: [])
                 self.profileButton.setTitleColor(UIColor.orange, for: [])
-                let storyboard = UIStoryboard(name: "Pages", bundle: nil)
+                let storyboard = UIStoryboard(name: "Workout", bundle: nil)
                 let viewController = storyboard.instantiateViewController(withIdentifier: "Workout")
                 self.present(viewController, animated: true, completion: nil)
                 //UIApplication.shared.keyWindow?.rootViewController = viewController
@@ -107,7 +107,7 @@ class NavigationViewController: UIViewController {
                 self.matchButton.setTitleColor(UIColor.orange, for: [])
                 self.workoutButton.setTitleColor(UIColor.orange, for: [])
                 self.profileButton.setTitleColor(UIColor.black, for: [])
-                let storyboard = UIStoryboard(name: "Pages", bundle: nil)
+                let storyboard = UIStoryboard(name: "Profile", bundle: nil)
                 let viewController = storyboard.instantiateViewController(withIdentifier: "Profile")
                 self.present(viewController, animated: true, completion: nil)
                 //UIApplication.shared.keyWindow?.rootViewController = viewController

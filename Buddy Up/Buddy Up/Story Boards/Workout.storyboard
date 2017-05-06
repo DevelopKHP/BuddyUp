@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Workout-->
+        <scene sceneID="zAU-fH-Xci">
+            <objects>
+                <viewController storyboardIdentifier="Workout" title="Workout" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pAx-FE-wGR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MMP-qF-h2t"/>
+                        <viewControllerLayoutGuide type="bottom" id="TiW-T6-Pzr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xUl-it-xqk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vlx-xm-4S6">
+                                <rect key="frame" x="0.0" y="90" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="ZXI-UB-rL2" kind="embed" id="dy0-rm-wHs"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sWm-Tz-ItX">
+                                <rect key="frame" x="0.0" y="215" width="375" height="452"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="jgV-GN-Zhg" kind="embed" id="Ti7-lr-fFr"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="uWw-5d-1uB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4S6-iy-bNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2428" y="-107.49625187406298"/>
+        </scene>
+        <!--Workout View Controller-->
+        <scene sceneID="spZ-pt-Flw">
+            <objects>
+                <tableViewController id="jgV-GN-Zhg" customClass="WorkoutViewController" customModule="Buddy_Up" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="28" sectionFooterHeight="28" id="6YG-Na-4kc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="452"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutListCell" rowHeight="89" id="Kb4-Kv-pKI" userLabel="WorkoutCell" customClass="WorkoutListCell" customModule="Buddy_Up" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="89"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kb4-Kv-pKI" id="0bM-Rn-png">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day of the Week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXV-7t-oTV">
+                                            <rect key="frame" x="8" y="8" width="146" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Workout of the Day" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="grs-mh-Cqc">
+                                            <rect key="frame" x="8" y="44" width="359" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="testFuntion:" destination="jgV-GN-Zhg" eventType="editingDidEnd" id="FHf-QI-BH4"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <connections>
+                                    <outlet property="dayOfWeek" destination="wXV-7t-oTV" id="9pX-jI-rfd"/>
+                                    <outlet property="workoutOfTheDay" destination="grs-mh-Cqc" id="0kt-gE-Zj5"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jgV-GN-Zhg" id="Gow-ge-UeT"/>
+                            <outlet property="delegate" destination="jgV-GN-Zhg" id="UVI-EP-BNA"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="omX-3r-a6i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3298" y="-107"/>
+        </scene>
+        <!--Navigation View Controller-->
+        <scene sceneID="56X-IW-sGz">
+            <objects>
+                <viewController id="ZXI-UB-rL2" customClass="NavigationViewController" customModule="Buddy_Up" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eKG-Di-Zu5"/>
+                        <viewControllerLayoutGuide type="bottom" id="9ZV-qQ-Aw2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2dC-I8-bmh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Buddy Up" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="160" translatesAutoresizingMaskIntoConstraints="NO" id="Els-55-zhg">
+                                <rect key="frame" x="67" y="13" width="240" height="50"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="32"/>
+                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eW-8b-eAf">
+                                <rect key="frame" x="16" y="88" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="navigateHome:" destination="ZXI-UB-rL2" eventType="touchUpInside" id="tbO-C3-ZaE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDk-1B-fdu">
+                                <rect key="frame" x="78" y="88" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Match">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="navigateMatch:" destination="ZXI-UB-rL2" eventType="touchUpInside" id="VzO-Zz-dSa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pN1-GF-OZQ">
+                                <rect key="frame" x="169" y="88" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Workout">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="navigateWorkout:" destination="ZXI-UB-rL2" eventType="touchUpInside" id="Sji-zg-uFY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cgn-nw-l4R">
+                                <rect key="frame" x="259" y="88" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Profile">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="navigateProfile:" destination="ZXI-UB-rL2" eventType="touchUpInside" id="pMS-jJ-vqT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umh-Bl-Tzc">
+                                <rect key="frame" x="259" y="23" width="63" height="30"/>
+                                <state key="normal" title="Sign-Out">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOut:" destination="ZXI-UB-rL2" eventType="touchUpInside" id="f8K-Q9-oTC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Els-55-zhg" firstAttribute="centerY" secondItem="2dC-I8-bmh" secondAttribute="centerY" id="23X-8w-Vy3"/>
+                            <constraint firstItem="umh-Bl-Tzc" firstAttribute="centerY" secondItem="2dC-I8-bmh" secondAttribute="centerY" id="iQQ-Mj-9Dj"/>
+                            <constraint firstItem="Els-55-zhg" firstAttribute="centerX" secondItem="2dC-I8-bmh" secondAttribute="centerX" id="lBo-DL-OhU"/>
+                            <constraint firstItem="umh-Bl-Tzc" firstAttribute="centerX" secondItem="2dC-I8-bmh" secondAttribute="centerX" constant="120" id="vGE-II-CfX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="homeButton" destination="1eW-8b-eAf" id="Ngx-H1-Gch"/>
+                        <outlet property="matchButton" destination="BDk-1B-fdu" id="oSu-dz-sOE"/>
+                        <outlet property="profileButton" destination="Cgn-nw-l4R" id="iTH-ZU-90T"/>
+                        <outlet property="workoutButton" destination="pN1-GF-OZQ" id="v8J-9D-zWh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="caG-8v-0H7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3297" y="-415"/>
+        </scene>
+    </scenes>
+</document>

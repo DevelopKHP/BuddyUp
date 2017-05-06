@@ -50,14 +50,14 @@ class ProfileViewController: UIViewController{
                 print("The request failed. Error: \(error)")
             }
             else if (task.result as? UserInfo) != nil {
-                DispatchQueue.main.async {
+                DispatchQueue.main.async(execute: {
                     self.user = task.result as! UserInfo
                     self.bio.text = self.user?._bio
-                }
+                })
             }
             return nil
         })
-        DispatchQueue.main.async(){
+        DispatchQueue.main.async(execute:{
             self.bio.textColor = UIColor.lightGray
             self.bio.layer.cornerRadius = 5
             self.bio.clipsToBounds = true
@@ -65,7 +65,7 @@ class ProfileViewController: UIViewController{
             UIColor.black.cgColor
             self.bio.layer.borderWidth = 1.0
             self.bio.isScrollEnabled = false
-        }
+        })
     }
     
     func keyboardWillShow(notification: NSNotification) {

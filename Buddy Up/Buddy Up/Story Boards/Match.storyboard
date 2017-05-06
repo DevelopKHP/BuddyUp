@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Match-->
+        <scene sceneID="2O1-vK-kdb">
+            <objects>
+                <viewController storyboardIdentifier="Match" title="Match" useStoryboardIdentifierAsRestorationIdentifier="YES" id="06c-Fq-JTW" customClass="MatchViewController" customModule="Buddy_Up" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zPy-0y-usr"/>
+                        <viewControllerLayoutGuide type="bottom" id="eMv-o4-303"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sDx-O9-3qB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9a9-U4-Nwd">
+                                <rect key="frame" x="0.0" y="90" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="UOk-kK-ZUZ" kind="embed" id="l3Y-Fs-LCo"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vk1-PP-4xs">
+                                <rect key="frame" x="261" y="503" width="67" height="48"/>
+                                <state key="normal" title="Button" image="like"/>
+                                <connections>
+                                    <action selector="likeButton:" destination="06c-Fq-JTW" eventType="touchDown" id="EGp-OO-bmh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emU-iJ-78O">
+                                <rect key="frame" x="41" y="503" width="67" height="48"/>
+                                <state key="normal" title="Button" image="nope"/>
+                                <connections>
+                                    <action selector="dislikeButton:" destination="06c-Fq-JTW" eventType="touchDown" id="qxx-cb-hR2"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="UserIdentityIcon" translatesAutoresizingMaskIntoConstraints="NO" id="hxW-Xh-8J6">
+                                <rect key="frame" x="102" y="254" width="170" height="130"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaf-7o-R2T">
+                                <rect key="frame" x="121" y="319" width="132" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dislike" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GW5-pC-fZM">
+                                <rect key="frame" x="121" y="319" width="132" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No More Matches!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrd-RR-6sP" userLabel="No More Matches">
+                                <rect key="frame" x="31" y="301" width="324" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfP-6x-d4g">
+                                <rect key="frame" x="90" y="421" width="199" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hfP-6x-d4g" firstAttribute="centerX" secondItem="sDx-O9-3qB" secondAttribute="centerX" id="9Il-Cy-H0K"/>
+                            <constraint firstItem="vk1-PP-4xs" firstAttribute="height" secondItem="sDx-O9-3qB" secondAttribute="height" constant="-500" id="C9p-rx-2SW"/>
+                            <constraint firstItem="emU-iJ-78O" firstAttribute="width" secondItem="sDx-O9-3qB" secondAttribute="width" constant="-240" id="CZZ-7C-fWi"/>
+                            <constraint firstItem="hrd-RR-6sP" firstAttribute="centerX" secondItem="sDx-O9-3qB" secondAttribute="centerX" id="GLw-dq-uFc"/>
+                            <constraint firstItem="GW5-pC-fZM" firstAttribute="centerY" secondItem="sDx-O9-3qB" secondAttribute="centerY" constant="-40" id="O4L-ED-c3b"/>
+                            <constraint firstItem="hxW-Xh-8J6" firstAttribute="centerY" secondItem="sDx-O9-3qB" secondAttribute="centerY" id="Qis-Ih-5WK"/>
+                            <constraint firstItem="vk1-PP-4xs" firstAttribute="width" secondItem="sDx-O9-3qB" secondAttribute="width" constant="-240" id="U7z-zQ-LD3"/>
+                            <constraint firstItem="emU-iJ-78O" firstAttribute="height" secondItem="sDx-O9-3qB" secondAttribute="height" constant="-500" id="UeP-uh-ycL"/>
+                            <constraint firstItem="GW5-pC-fZM" firstAttribute="centerX" secondItem="sDx-O9-3qB" secondAttribute="centerX" id="ZVg-rI-HZb"/>
+                            <constraint firstItem="hrd-RR-6sP" firstAttribute="centerY" secondItem="sDx-O9-3qB" secondAttribute="centerY" id="axd-Kj-BIh"/>
+                            <constraint firstItem="hfP-6x-d4g" firstAttribute="centerY" secondItem="sDx-O9-3qB" secondAttribute="centerY" constant="120" id="ch6-KC-91l"/>
+                            <constraint firstItem="oaf-7o-R2T" firstAttribute="centerY" secondItem="sDx-O9-3qB" secondAttribute="centerY" constant="-40" id="eXa-8b-wMA"/>
+                            <constraint firstItem="hxW-Xh-8J6" firstAttribute="centerX" secondItem="sDx-O9-3qB" secondAttribute="centerX" id="gF3-mv-SVz"/>
+                            <constraint firstItem="vk1-PP-4xs" firstAttribute="centerY" secondItem="sDx-O9-3qB" secondAttribute="centerY" constant="200" id="h7Q-7s-gip"/>
+                            <constraint firstItem="emU-iJ-78O" firstAttribute="centerX" secondItem="sDx-O9-3qB" secondAttribute="centerX" constant="-80" id="i8H-XX-6sZ"/>
+                            <constraint firstItem="vk1-PP-4xs" firstAttribute="centerX" secondItem="sDx-O9-3qB" secondAttribute="centerX" constant="80" id="izE-dw-QIs"/>
+                            <constraint firstItem="oaf-7o-R2T" firstAttribute="centerX" secondItem="sDx-O9-3qB" secondAttribute="centerX" id="xxh-Rw-Jwb"/>
+                            <constraint firstItem="emU-iJ-78O" firstAttribute="centerY" secondItem="sDx-O9-3qB" secondAttribute="centerY" constant="200" id="zQb-WO-WA9"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="NI3-j0-wfD"/>
+                    <connections>
+                        <outlet property="disLikeButton" destination="emU-iJ-78O" id="6zf-zm-lCQ"/>
+                        <outlet property="dislikeLabel" destination="GW5-pC-fZM" id="5IS-RX-uVY"/>
+                        <outlet property="displayName" destination="hfP-6x-d4g" id="Rjx-Qp-M1A"/>
+                        <outlet property="likeButton" destination="vk1-PP-4xs" id="V3j-Jv-ZRm"/>
+                        <outlet property="likeLabel" destination="oaf-7o-R2T" id="ewV-OH-MrL"/>
+                        <outlet property="matchView" destination="sDx-O9-3qB" id="0Dk-SI-bcM"/>
+                        <outlet property="navigationBar" destination="9a9-U4-Nwd" id="VcI-Un-9lC"/>
+                        <outlet property="noMoreMatchesLabel" destination="hrd-RR-6sP" id="vbi-Cs-kad"/>
+                        <outlet property="profileImage" destination="hxW-Xh-8J6" id="bTy-eo-5bW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nTX-qj-HeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2189.5999999999999" y="796.55172413793105"/>
+        </scene>
+        <!--Navigation View Controller-->
+        <scene sceneID="TPJ-Qr-GR8">
+            <objects>
+                <viewController id="UOk-kK-ZUZ" customClass="NavigationViewController" customModule="Buddy_Up" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eGT-6S-uP9"/>
+                        <viewControllerLayoutGuide type="bottom" id="8iC-VZ-tcY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FPm-fU-S3c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Buddy Up" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="160" translatesAutoresizingMaskIntoConstraints="NO" id="uXA-Yr-zR8">
+                                <rect key="frame" x="67" y="13" width="240" height="50"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="32"/>
+                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tap-fv-NbR">
+                                <rect key="frame" x="16" y="88" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="navigateHome:" destination="UOk-kK-ZUZ" eventType="touchUpInside" id="972-83-rH4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGk-rR-4KS">
+                                <rect key="frame" x="78" y="88" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Match">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="navigateMatch:" destination="UOk-kK-ZUZ" eventType="touchUpInside" id="Rb2-wn-FUK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnV-gA-U71">
+                                <rect key="frame" x="169" y="88" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Workout">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="navigateWorkout:" destination="UOk-kK-ZUZ" eventType="touchUpInside" id="NMk-aa-Khj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mty-LZ-USt">
+                                <rect key="frame" x="259" y="88" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Profile">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="navigateProfile:" destination="UOk-kK-ZUZ" eventType="touchUpInside" id="VD6-lE-K5K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyz-cZ-QeZ">
+                                <rect key="frame" x="259" y="23" width="63" height="30"/>
+                                <state key="normal" title="Sign-Out">
+                                    <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOut:" destination="UOk-kK-ZUZ" eventType="touchUpInside" id="b8i-IU-5qs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zyz-cZ-QeZ" firstAttribute="centerX" secondItem="FPm-fU-S3c" secondAttribute="centerX" constant="120" id="0DY-EA-YZd"/>
+                            <constraint firstItem="Zyz-cZ-QeZ" firstAttribute="centerY" secondItem="FPm-fU-S3c" secondAttribute="centerY" id="0nV-1x-6cn"/>
+                            <constraint firstItem="uXA-Yr-zR8" firstAttribute="centerX" secondItem="FPm-fU-S3c" secondAttribute="centerX" id="1Hy-cA-bzt"/>
+                            <constraint firstItem="uXA-Yr-zR8" firstAttribute="centerY" secondItem="FPm-fU-S3c" secondAttribute="centerY" id="K9R-tO-674"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="homeButton" destination="tap-fv-NbR" id="Nyr-Ad-eyY"/>
+                        <outlet property="matchButton" destination="YGk-rR-4KS" id="CjE-5t-fg3"/>
+                        <outlet property="profileButton" destination="Mty-LZ-USt" id="6vQ-RZ-v3k"/>
+                        <outlet property="workoutButton" destination="hnV-gA-U71" id="qS8-ju-09A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bFL-rZ-ufB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3004" y="796"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="UserIdentityIcon" width="50" height="50"/>
+        <image name="like" width="600" height="400"/>
+        <image name="nope" width="1000" height="1000"/>
+    </resources>
+</document>

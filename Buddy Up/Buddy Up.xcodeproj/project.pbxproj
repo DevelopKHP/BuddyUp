@@ -9,9 +9,16 @@
 /* Begin PBXBuildFile section */
 		B12A3CF21E8CCDD0007D8D26 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12A3CF11E8CCDD0007D8D26 /* ProfileViewController.swift */; };
 		B13217331EA08AD200F9C72C /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13217321EA08AD200F9C72C /* AWSMobileHubHelper.framework */; };
+		B13217C11EBDB23700687E71 /* Match.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13217C01EBDB23700687E71 /* Match.storyboard */; };
+		B13217C31EBDB2B700687E71 /* Workout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13217C21EBDB2B700687E71 /* Workout.storyboard */; };
+		B13217C51EBDB32D00687E71 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13217C41EBDB32D00687E71 /* Profile.storyboard */; };
+		B13217C71EBDB41E00687E71 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13217C61EBDB41E00687E71 /* Home.storyboard */; };
+		B13217C91EBDE46F00687E71 /* LoadingScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13217C81EBDE46F00687E71 /* LoadingScreen.storyboard */; };
+		B13217CB1EBDE4FE00687E71 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13217CA1EBDE4FE00687E71 /* LoadingScreen.swift */; };
 		B142AAF81EA0C30E001C458B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B142AAF71EA0C30E001C458B /* Main.storyboard */; };
-		B142AAFA1EA0C3A1001C458B /* Pages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B142AAF91EA0C3A1001C458B /* Pages.storyboard */; };
 		B142AAFC1EA0C4C3001C458B /* FirstSignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B142AAFB1EA0C4C3001C458B /* FirstSignIn.storyboard */; };
+		B14B4D9F1EBBD96700241E76 /* UserInfoTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14B4D9E1EBBD96700241E76 /* UserInfoTable.swift */; };
+		B14B4DA11EBBD96F00241E76 /* WorkoutTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14B4DA01EBBD96F00241E76 /* WorkoutTable.swift */; };
 		B14F51B31E82452D00CDE1D9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14F51B21E82452D00CDE1D9 /* MainViewController.swift */; };
 		B14F51B51E8246D700CDE1D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B14F51B41E8246D700CDE1D9 /* LaunchScreen.storyboard */; };
 		B16FA5741E96C9B40077AD76 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16FA5731E96C9B40077AD76 /* UserInfo.swift */; };
@@ -68,9 +75,16 @@
 /* Begin PBXFileReference section */
 		B12A3CF11E8CCDD0007D8D26 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B13217321EA08AD200F9C72C /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSMobileHubHelper.framework; sourceTree = "<group>"; };
+		B13217C01EBDB23700687E71 /* Match.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Match.storyboard; sourceTree = "<group>"; };
+		B13217C21EBDB2B700687E71 /* Workout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Workout.storyboard; sourceTree = "<group>"; };
+		B13217C41EBDB32D00687E71 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		B13217C61EBDB41E00687E71 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		B13217C81EBDE46F00687E71 /* LoadingScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoadingScreen.storyboard; sourceTree = "<group>"; };
+		B13217CA1EBDE4FE00687E71 /* LoadingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		B142AAF71EA0C30E001C458B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		B142AAF91EA0C3A1001C458B /* Pages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pages.storyboard; sourceTree = "<group>"; };
 		B142AAFB1EA0C4C3001C458B /* FirstSignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstSignIn.storyboard; sourceTree = "<group>"; };
+		B14B4D9E1EBBD96700241E76 /* UserInfoTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTable.swift; sourceTree = "<group>"; };
+		B14B4DA01EBBD96F00241E76 /* WorkoutTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutTable.swift; sourceTree = "<group>"; };
 		B14F51B21E82452D00CDE1D9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B14F51B41E8246D700CDE1D9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B16FA5731E96C9B40077AD76 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -140,6 +154,8 @@
 			children = (
 				B16FA5731E96C9B40077AD76 /* UserInfo.swift */,
 				B185487F1E91F97900EDA42D /* NoSQLModelHelpers.swift */,
+				B14B4DA01EBBD96F00241E76 /* WorkoutTable.swift */,
+				B14B4D9E1EBBD96700241E76 /* UserInfoTable.swift */,
 				B18548781E91EF0500EDA42D /* FirstLoginViewController.swift */,
 				B176B8101EB2BF4A001E0661 /* Workout.swift */,
 			);
@@ -181,8 +197,12 @@
 				B142AAF71EA0C30E001C458B /* Main.storyboard */,
 				B1E4ABE61E82106E0095BB18 /* UserDataStorage.storyboard */,
 				B14F51B41E8246D700CDE1D9 /* LaunchScreen.storyboard */,
-				B142AAF91EA0C3A1001C458B /* Pages.storyboard */,
 				B142AAFB1EA0C4C3001C458B /* FirstSignIn.storyboard */,
+				B13217C01EBDB23700687E71 /* Match.storyboard */,
+				B13217C21EBDB2B700687E71 /* Workout.storyboard */,
+				B13217C41EBDB32D00687E71 /* Profile.storyboard */,
+				B13217C61EBDB41E00687E71 /* Home.storyboard */,
+				B13217C81EBDE46F00687E71 /* LoadingScreen.storyboard */,
 			);
 			name = "Story Boards";
 			path = "Buddy Up/Story Boards";
@@ -203,6 +223,7 @@
 				B1AFCC6C1E8DE7940077F2D9 /* NavigationViewController.swift */,
 				B19C022B1EB0602E00488CD2 /* WorkoutViewController.swift */,
 				B176B8121EB347F9001E0661 /* MatchViewController.swift */,
+				B13217CA1EBDE4FE00687E71 /* LoadingScreen.swift */,
 			);
 			name = "Swift Files";
 			path = "Buddy Up/Swift Files";
@@ -309,11 +330,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B14F51B51E8246D700CDE1D9 /* LaunchScreen.storyboard in Resources */,
+				B13217C71EBDB41E00687E71 /* Home.storyboard in Resources */,
 				B1E4ABE71E82106E0095BB18 /* UserDataStorage.storyboard in Resources */,
+				B13217C11EBDB23700687E71 /* Match.storyboard in Resources */,
 				B18859F81E81BF8200ADEC33 /* Assets.xcassets in Resources */,
+				B13217C31EBDB2B700687E71 /* Workout.storyboard in Resources */,
 				B142AAFC1EA0C4C3001C458B /* FirstSignIn.storyboard in Resources */,
+				B13217C51EBDB32D00687E71 /* Profile.storyboard in Resources */,
 				B142AAF81EA0C30E001C458B /* Main.storyboard in Resources */,
-				B142AAFA1EA0C3A1001C458B /* Pages.storyboard in Resources */,
+				B13217C91EBDE46F00687E71 /* LoadingScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,12 +365,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B14B4DA11EBBD96F00241E76 /* WorkoutTable.swift in Sources */,
 				B1AFCC6D1E8DE7940077F2D9 /* NavigationViewController.swift in Sources */,
 				B19C022C1EB0602E00488CD2 /* WorkoutViewController.swift in Sources */,
 				B176B8131EB347F9001E0661 /* MatchViewController.swift in Sources */,
 				B1E4ABF91E82111F0095BB18 /* AWSConfiguration.swift in Sources */,
+				B13217CB1EBDE4FE00687E71 /* LoadingScreen.swift in Sources */,
 				B1AB8FFC1E822F720009AFF2 /* SignInViewController.swift in Sources */,
 				B1F2DFCF1E81C34C00F2CE6A /* AWSMobileClient.swift in Sources */,
+				B14B4D9F1EBBD96700241E76 /* UserInfoTable.swift in Sources */,
 				B1885A091E81C08500ADEC33 /* AppDelegate.swift in Sources */,
 				B1E4ABE21E82104D0095BB18 /* UserDataStorageViewController.swift in Sources */,
 				B12A3CF21E8CCDD0007D8D26 /* ProfileViewController.swift in Sources */,

@@ -16,16 +16,34 @@ import UIKit
 import AWSMobileHubHelper
 import AWSDynamoDB
 
-class MainViewController: UIViewController {
+class MainViewController: UITableViewController {
    
     var willEnterForegroundObserver: AnyObject!
+    var thisUser: UserInfo! = UserInfo()
     
-    @IBOutlet weak var mainScrollView: UIScrollView!
-    @IBOutlet weak var noMatches: UILabel!
+    
+    let objectMapper = AWSDynamoDBObjectMapper.default()
+    let identityManager = AWSIdentityManager.default()
+  
+
     
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        self.objectMapper.load(UserInfo.self, hashKey: self.identityManager.identityId as Any, rangeKey:nil).continueWith(block: {
+            (task:AWSTask<AnyObject>!) -> Any? in
+            if let error = task.error as NSError? {
+                print("The request failed. Error: \(error)")
+            }
+            else if (task.result as? UserInfo) != nil {
+                self.thisUser = task.result as! UserInfo
+                self.tableView.reloadData()
+                
+            }
+            return nil
+        })
         if !(AWSIdentityManager.default().isLoggedIn) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "SignIn")
@@ -34,71 +52,77 @@ class MainViewController: UIViewController {
         else{
             willEnterForegroundObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: OperationQueue.current) { _ in
             }
-            super.viewDidLoad()
         }
         
-        let scanExpression = AWSDynamoDBScanExpression()
-        var errors: [NSError] = []
-        let objectMapper = AWSDynamoDBObjectMapper.default()
-        let identityManager = AWSIdentityManager.default()
-        var newUser: UserInfo! = UserInfo()
-        var collection = [String]()
-        DispatchQueue.main.async{
-            objectMapper.load(UserInfo.self, hashKey: identityManager.identityId as Any, rangeKey:nil).continueWith(block: {
-                (task:AWSTask<AnyObject>!) -> Any? in
-                if let error = task.error as NSError? {
-                    errors.append(error)
-                }
-                else if (task.result as? UserInfo) != nil {
-                    DispatchQueue.main.async {
-                        newUser = task.result as! UserInfo
-                    }
-                }
-                return nil
-            })
-            objectMapper.scan(UserInfo.self, expression: scanExpression).continueWith { (task:AWSTask<AWSDynamoDBPaginatedOutput>) -> Any? in
-                if let error = task.error as NSError? {
-                    errors.append(error)
-                }
-                else if (task.result) != nil {
-                    for i in 1...Int((task.result?.items.count)!){
-                        let tableRow = task.result!
-                        let description = tableRow.items.description.components(separatedBy: " ")
-                        
-                        let last = description.count - 1
-                        for j in (1...last) {
-                            if(description[j].range(of: "userId") != nil){
-                                print("Hit")
-                                print(description[j])
-                                print(description[j+2])
-                                collection.append(description[j+2])
-                            }
-                        }
-                    }
-                }
-                newUser._allUsers = collection
-                return nil
-            }
-            
-            objectMapper.save(newUser, completionHandler: {(error: Error?) -> Void in
-                if let error = error as NSError? {
-                    DispatchQueue.main.async(execute: {
-                        errors.append(error)
-                    })
-                }
-            })
-
-        }
-        super.viewDidLoad()
-        
-        
-        
-       
     }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(self.thisUser._matches == nil){
+            return 0
+        }
+        else{
+            
+            return (thisUser._matches?.count)!
+        }
+
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> MatchUserCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MatchUserCell")! as! MatchUserCell
+        var user : UserInfo! = UserInfo()
+        
+        objectMapper.load(UserInfo.self, hashKey: identityManager.identityId as Any, rangeKey:nil).continueWith(block: {
+            (task:AWSTask<AnyObject>!) -> Any? in
+            if let error = task.error as NSError? {
+                print("The request failed. Error: \(error)")
+            }
+            else if (task.result as? UserInfo) != nil {
+                user = task.result as! UserInfo
+                
+                self.objectMapper.load(UserInfo.self, hashKey: user._matches?[indexPath.row] as Any, rangeKey:nil).continueWith(block: {
+                    (task:AWSTask<AnyObject>!) -> Any? in
+                    if let error = task.error as NSError? {
+                        print("The request failed. Error: \(error)")
+                    }
+                    else if (task.result as? UserInfo) != nil {
+                            var matchUser: UserInfo! = UserInfo()
+                            matchUser = task.result as! UserInfo
+                            print(matchUser._firstName)
+                            DispatchQueue.main.async(execute: {
+                                
+                                let imgURLString = "https://graph.facebook.com/" + (matchUser._graphRequest)! + "/picture?type=large" //type=normal
+                                let imgURL = NSURL(string: imgURLString)
+                                let imageData = NSData(contentsOf: imgURL! as URL)
+                                var name = matchUser._firstName! + " "
+                                name.append(matchUser._lastName!)
+                                cell.profilePicture.image = UIImage(data: imageData! as Data)
+                                cell.userName.text = name
+                                
+
+                            })
+                    }
+                    return nil
+                })
+            }
+            return nil
+        })
+        
+        return cell
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
   
+}
+
+class MatchUserCell: UITableViewCell, UITableViewDelegate {
+    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    
+    
 }
 

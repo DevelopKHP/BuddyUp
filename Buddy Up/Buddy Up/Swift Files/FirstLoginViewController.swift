@@ -86,7 +86,6 @@ class FirstLoginViewController: UIViewController, UITextViewDelegate {
         newUser._bio = bio.text
         newUser._firstName = name?[0]
         newUser._lastName = name?[(name?.count)! - 1]
-        newUser._matches = nil
         newUser._graphRequest = FBSDKAccessToken.current().userID
 
         
@@ -111,13 +110,14 @@ class FirstLoginViewController: UIViewController, UITextViewDelegate {
         
         // Adding to Workout Table //
         group.enter()
-        let intialData: Workout! = Workout()
+        let initialData: Workout! = Workout()
         let dayOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
         let workout = ["Workout of the Day", "Workout of the Day", "Workout of the Day", "Workout of the Day", "Workout of the Day", "Workout of the Day", "Workout of the Day",]
-        intialData?._userId = identityManager.identityId
-        intialData?._daysOfTheWeek = dayOfWeek
-        intialData?._workout = workout
-        objectMapper.save(intialData, completionHandler: {(error: Error?) -> Void in
+        initialData?._userId = identityManager.identityId
+        initialData?._daysOfTheWeek = dayOfWeek
+        initialData?._workout = workout
+        
+        objectMapper.save(initialData, completionHandler: {(error: Error?) -> Void in
             if let error = error as NSError?{
                 DispatchQueue.main.async(execute:{
                     errors.append(error)
@@ -130,8 +130,8 @@ class FirstLoginViewController: UIViewController, UITextViewDelegate {
         
         group.enter()
         DispatchQueue.main.async(execute: {
-            let storyboard = UIStoryboard(name: "Pages", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "Home")
+            let storyboard = UIStoryboard(name: "LoadingScreen", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "LoadingScreen")
             self.present(viewController, animated: true, completion: nil)
             group.leave()
             //UIApplication.shared.keyWindow?.rootViewController = viewController

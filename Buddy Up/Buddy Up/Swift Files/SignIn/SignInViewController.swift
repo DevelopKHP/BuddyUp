@@ -99,8 +99,8 @@ class SignInViewController: UIViewController {
                     }
                     else{
                         DispatchQueue.main.async(execute: {
-                            let storyboard = UIStoryboard(name: "Pages", bundle: nil)
-                            let viewController = storyboard.instantiateViewController(withIdentifier: "Home")
+                            let storyboard = UIStoryboard(name: "LoadingScreen", bundle: nil)
+                            let viewController = storyboard.instantiateViewController(withIdentifier: "LoadingScreen")
                             self.present(viewController, animated: true, completion: nil)
                             //UIApplication.shared.keyWindow?.rootViewController = viewController
                         })

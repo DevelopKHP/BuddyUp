@@ -39,7 +39,7 @@ class WorkoutViewController: UITableViewController{
                 print("The request failed. Error: \(error)")
             }
             else if (task.result as? Workout) != nil {
-                DispatchQueue.main.async {
+                DispatchQueue.main.async(execute: {
                     self.userWorkout = task.result as! Workout
                     
                     print("Error Checking")
@@ -47,7 +47,7 @@ class WorkoutViewController: UITableViewController{
                     cell.dayOfWeek.text = self.userWorkout?._daysOfTheWeek?[indexPath.row] as String!
                     cell.workoutOfTheDay.text = self.userWorkout?._workout?[indexPath.row] as String!
                     cell.workoutOfTheDay.restorationIdentifier = self.userWorkout?._daysOfTheWeek?[indexPath.row] as String!
-                }
+                })
             }
             return nil
         })
@@ -74,7 +74,6 @@ class WorkoutViewController: UITableViewController{
             }
         })
         tableView.reloadData()
-
     }
     
     func keyboardWillShow(notification: NSNotification) {
