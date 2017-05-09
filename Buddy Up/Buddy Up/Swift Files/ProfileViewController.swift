@@ -124,10 +124,7 @@ class ProfileViewController: UIViewController{
             group.leave()
         })
         DispatchQueue.main.async(execute: {
-            let storyboard = UIStoryboard(name: "Pages", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "Home")
-            self.present(viewController, animated: true, completion: nil)
-            //UIApplication.shared.keyWindow?.rootViewController = viewController
+            self.viewDidLoad()
         })
 
     }
